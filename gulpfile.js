@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    sass = require('gulp-sass'), 
+    sass = require('gulp-sass'),
     pug = require('gulp-pug'),
     jshint = require('gulp-jshint'),
     concat = require('gulp-concat'),
@@ -96,6 +96,7 @@ gulp.task('styles', function() {
         }))
         .pipe(sourcemaps.init())
             .pipe(sass({
+                includePaths: ['node_modules/foundation-sites/scss'],
                 outputStyle: 'compressed'
             }))
             .pipe(autoprefixer('last 3 versions'))
@@ -141,7 +142,7 @@ gulp.task('lint', function() {
 			lookup: true,
 			linter: 'jshint',
 		}))
-		.pipe(jshint.reporter('default')); 
+		.pipe(jshint.reporter('default'));
 });
 
 /* Image compressing task */
@@ -183,8 +184,8 @@ gulp.task('serve', function() {
     browserSync.init({
         server: './dist/'
     });
-    
-    gulp.watch([routes.styles.scss, routes.styles._scss], ['styles']); 
+
+    gulp.watch([routes.styles.scss, routes.styles._scss], ['styles']);
     gulp.watch([routes.templates.pug, routes.templates._pug], ['templates']);
     gulp.watch(routes.scripts.js, ['scripts', 'beautify']);
 });

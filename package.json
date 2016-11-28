@@ -1,13 +1,13 @@
 {
-  "name": "test",
+  "name": "Aristocrat",
   "version": "0.0.0",
-  "description": "test d",
+  "description": "base layout",
   "license": "MIT",
   "main": "",
-  "repository":"test",
+  "repository":"https://github.com/massmediagroup-10/aristocrat",
   "author": {
-    "name": "me",
-    "email": "me@me.com",
+    "name": "a.nuzhin",
+    "email": "a.nuzhin.massmediagroup@gmail.com",
     "url": ""
   },
   "scripts": {

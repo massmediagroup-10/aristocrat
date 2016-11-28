@@ -1,6 +1,6 @@
-# test
+# Aristocrat cids
 
-> test d
+> base layout
 
 ## Technologies
 
@@ -26,7 +26,7 @@ yo test
 
 # Author 
 
-me - me@me.com
+a.nuzhin - a.nuzhin.massmediagroup@gmail.com
 
 # License 
 

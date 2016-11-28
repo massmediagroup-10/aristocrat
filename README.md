@@ -15,13 +15,13 @@
 ### Install
 
 ```bash
-npm install -g test
+npm install -g aristocrat
 ```
 
 ### Use 
 
 ```bash
-yo test
+yo aristocrat
 ```
 
 # Author 

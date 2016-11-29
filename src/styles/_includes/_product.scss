@@ -1,0 +1,46 @@
+.product {
+    &-list {
+
+    }
+    &-item {
+        margin-bottom: 75px;
+        &-image {
+            margin-bottom: 20px;
+            height: 220px;
+            img {
+
+            }
+        }
+        &-description {
+            h5 {
+                font-family: $times;
+                font-size: $size-h5;
+                text-transform: uppercase;
+                margin-bottom: 22px;
+            }
+            p {
+                margin-bottom: 7px;
+            }
+            a {
+                color: $body-font-color;
+            }
+            .detail {
+                font-size: $size-h5;
+                text-transform: uppercase;
+                .fa {
+                    margin-left: 8px;
+                    left: 0;
+                    transition: 300ms all ease;
+                    position: relative;
+                }
+                &:hover {
+                    .fa {
+                        left: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+.trending {
+}

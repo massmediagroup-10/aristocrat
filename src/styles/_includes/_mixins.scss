@@ -1,11 +1,62 @@
 @mixin bp-mobile {
-  @media (max-width: #{$max-width}) {
-    @content;
-  }
+    @media (max-width: #{$max-width}) {
+        @content;
+    }
 }
 
 @mixin mobile-aspect {
     @media screen and (device-aspect-ratio: 40/71) {
         @content;
+    }
+}
+
+%clear:after {
+    content: '';
+    clear: both;
+    font-size: 1px;
+    line-height: 1px;
+    height: 0;
+    overflow: hidden;
+    display: block;
+}
+
+%table,
+.table,
+.vertical-box {
+    display: table;
+    width: 100%;
+}
+
+%table-row {
+    display: table-row;
+    width: 100%;
+}
+
+%table-cell,
+.vertical-middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+%inline-middle {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+%full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+%blackout {
+    position: relative;
+    &:before {
+        content: '';
+        @extend %full;
+        background: rgba(0, 0, 0, 0.5);
     }
 }

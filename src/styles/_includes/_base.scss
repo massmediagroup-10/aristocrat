@@ -1,0 +1,20 @@
+ul {
+    li {
+        list-style: none;
+    }
+}
+.subheading {
+    text-transform: uppercase;
+    margin-bottom: 67px;
+    text-align: center;
+}
+
+h3 {
+    font-family: $times;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: $size-h3;
+}
+h5 {
+    font-weight: normal;
+}

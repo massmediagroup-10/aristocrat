@@ -1,5 +1,10 @@
 @import '_includes/_vars';
 @import '_includes/_mixins';
+@import '_includes/fonts';
+@import 'font-awesome';
 @import 'foundation';
 @import '_foundation_settings';
-@import '_includes/_main';
+@import '_foundation_include';
+@import '_includes/_base';
+@import '_includes/partials';
+

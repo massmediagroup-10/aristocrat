@@ -33,7 +33,9 @@ var routes = {
     styles: {
         scss: baseDirs.src+'styles/*.scss',
         _scss: baseDirs.src+'styles/_includes/*.scss',
-        css: baseDirs.assets+'css/'
+        css: baseDirs.assets+'css/',
+        fonts: baseDirs.src+'fonts/',
+        fontsdist: baseDirs.assets+'fonts/'
     },
 
     templates: {
@@ -53,7 +55,8 @@ var routes = {
         imgmin: baseDirs.assets+'files/img/',
         cssFiles: baseDirs.assets+'css/*.css',
         htmlFiles: baseDirs.dist+'*.html',
-        styleCss: baseDirs.assets+'css/style.css'
+        styleCss: baseDirs.assets+'css/style.css',
+        fonts: baseDirs.assets+'fonts/'
     },
 
     deployDirs: {
@@ -96,7 +99,10 @@ gulp.task('styles', function() {
         }))
         .pipe(sourcemaps.init())
             .pipe(sass({
-                includePaths: ['node_modules/foundation-sites/scss'],
+                includePaths: [
+                    'node_modules/foundation-sites/scss',
+                    'node_modules/font-awesome/scss'
+                ],
                 outputStyle: 'compressed'
             }))
             .pipe(autoprefixer('last 3 versions'))
@@ -111,10 +117,28 @@ gulp.task('styles', function() {
         }));
 });
 
+
+// FONTS
+gulp.task('fonts', function () {
+    return gulp.src([
+            routes.styles.fonts + '/*.*',
+            'node_modules/font-awesome/fonts',
+        ])
+        .pipe(gulp.dest(routes.styles.fontsdist))
+        .pipe(browserSync.stream())
+        .pipe(notify({
+            title: 'Fonts placed succesfully!',
+            message: 'fonts task completed.'
+        }));
+});
+
 /* Scripts (js) ES6 => ES5, minify and concat into a single file.*/
 
 gulp.task('scripts', function() {
-    return gulp.src(routes.scripts.js)
+    return gulp.src([
+        routes.scripts.js,
+        'node_modules/foundation-sites/js/foundation.orbit.js'
+    ])
         .pipe(plumber({
             errorHandler: notify.onError({
                 title: "Error: Babel and Concat failed.",
@@ -188,6 +212,7 @@ gulp.task('serve', function() {
     gulp.watch([routes.styles.scss, routes.styles._scss], ['styles']);
     gulp.watch([routes.templates.pug, routes.templates._pug], ['templates']);
     gulp.watch(routes.scripts.js, ['scripts', 'beautify']);
+    gulp.watch(routes.files.images, ['images']);
 });
 
 /* Optimize your project */
@@ -238,9 +263,9 @@ gulp.task('critical', function () {
         }));
 });
 
-gulp.task('dev', ['templates', 'styles', 'scripts',  'images', 'serve']);
+gulp.task('dev', ['templates', 'styles', 'fonts', 'scripts',  'images', 'serve']);
 
-gulp.task('build', ['templates', 'styles', 'scripts', 'images']);
+gulp.task('build', ['templates', 'styles', 'fonts', 'scripts', 'images']);
 
 gulp.task('optimize', ['uncss', 'critical', 'images']);
 

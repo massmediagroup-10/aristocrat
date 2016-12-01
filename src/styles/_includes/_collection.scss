@@ -2,22 +2,38 @@
     &-item {
         background: $colectionColor;
         margin-bottom: 28px;
+        padding: rem-calc(34) rem-calc(30) rem-calc(14) rem-calc(30);
         &-category {
             text-transform: uppercase;
+            margin-bottom: 28px;
+            .icon-star {
+                margin-right: 10px;
+            }
         }
-        h3 {
+        &-description {
+            h2 {
+                padding-top: 23px;
+                letter-spacing: 0.7px;
+                margin-bottom: 11px;
+            }
+            p {
+                font-size: $size-h5;
+                margin-bottom: 21px;
+            }
+            .button {
 
-        }
-        p {
-            font-size: 14px;
-
-        }
-        .button {
-
+            }
         }
         &-image {
+            margin-bottom: 12px;
             img {
 
+            }
+        }
+        &.full {
+            padding: pxrem(56) pxrem(53) pxrem(55) pxrem(53);
+            .collection-item-image {
+                margin-bottom: 0;
             }
         }
     }

@@ -1,0 +1,91 @@
+.footer {
+    background: $activeColor;
+    border-top: 6px solid #fff;
+    padding-top: rem-calc(49);
+    padding-bottom: rem-calc(15);
+    color: $primary-color;
+    position: relative;
+    z-index: 3;
+    h6 {
+        margin-bottom: 10px;
+    }
+    ul {
+        li {
+            margin-bottom: 5px;
+        }
+    }
+    .input-group {
+        max-width: 300px;
+    }
+    &-column {
+        margin-bottom: 42px;
+    }
+    .input-group-button {
+        .button {
+            min-width: 80px;
+        }
+    }
+    &-contacts {
+        &-item {
+            margin-bottom: 7px;
+            i {
+                width: 25px;
+                font-size: 17px;
+            }
+        }
+    }
+    &-socials {
+        @extend %clear;
+        &-items {
+            float: left;
+            margin-right: 28px;
+            &:last-child {
+                margin-right: 0;
+            }
+            .fa {
+                font-size: 26px;
+            }
+        }
+    }
+    p {
+        margin-bottom: 15px;
+    }
+    &-menu {
+        margin-bottom: 15px;
+        li {
+            padding-right:17px;
+            display: inline-block;
+            vertical-align: middle;
+            &:after {
+                content: '|';
+                padding-left: 17px;
+            }
+            &:last-child{
+                padding: 0;
+                &:after {
+                    content: normal;
+                }
+            }
+        }
+    }
+    .ontop {
+        display: block;
+        text-align: center;
+        h5 {
+            font-family: $roboto;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+        .icon-top {
+            transition: 300ms all ease-out;
+            position: relative;
+            top: 0;
+        }
+        a:hover {
+            .icon-top {
+                top: -5px;
+            }
+        }
+    }
+}

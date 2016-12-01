@@ -17,7 +17,8 @@ var gulp = require('gulp'),
     cssimport = require('gulp-cssimport'),
     beautify = require('gulp-beautify'),
     sourcemaps = require('gulp-sourcemaps'),
-    critical = require('critical').stream;
+    critical = require('critical').stream,
+    merge = require('merge-stream');
 
 /* baseDirs: baseDirs for the project */
 
@@ -48,7 +49,6 @@ var routes = {
         js: baseDirs.src+'scripts/*.js',
         jsmin: baseDirs.assets+'js/'
     },
-
     files: {
         html: 'dist/',
         images: baseDirs.src+'images/*',
@@ -136,9 +136,9 @@ gulp.task('fonts', function () {
 
 gulp.task('scripts', function() {
     return gulp.src([
-        routes.scripts.js,
-        'node_modules/foundation-sites/js/foundation.orbit.js'
-    ])
+            routes.scripts.js,
+            'node_modules/foundation-sites/js/foundation.orbit.js'
+        ])
         .pipe(plumber({
             errorHandler: notify.onError({
                 title: "Error: Babel and Concat failed.",
@@ -147,8 +147,8 @@ gulp.task('scripts', function() {
         }))
         .pipe(sourcemaps.init())
             .pipe(concat('script.js'))
-            .pipe(babel())
-            .pipe(uglify())
+            //.pipe(babel())
+            //.pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(routes.scripts.jsmin))
         .pipe(browserSync.stream())
@@ -263,9 +263,23 @@ gulp.task('critical', function () {
         }));
 });
 
-gulp.task('dev', ['templates', 'styles', 'fonts', 'scripts',  'images', 'serve']);
+/* Move slick-carousel to correct folders */
 
-gulp.task('build', ['templates', 'styles', 'fonts', 'scripts', 'images']);
+gulp.task('slick', function() {
+    var slick = 'node_modules/slick-carousel/slick/';
+    var jquery_path = 'node_modules/slick-carousel/node_modules/jquery/dist/jquery.min.js';
+    var jquery = gulp.src(jquery_path)
+        .pipe(gulp.dest(routes.scripts.jsmin));
+    var js = gulp.src(slick + 'slick.min.js')
+        .pipe(gulp.dest(routes.scripts.jsmin));
+    var css = gulp.src(slick + 'slick.css')
+        .pipe(gulp.dest(routes.styles.css));
+    return merge(js, css, jquery);
+});
+
+gulp.task('dev', ['templates', 'styles', 'fonts', 'scripts',  'images', 'slick', 'serve']);
+
+gulp.task('build', ['templates', 'styles', 'fonts', 'scripts', 'images', 'slick']);
 
 gulp.task('optimize', ['uncss', 'critical', 'images']);
 

@@ -1,6 +1,8 @@
 .product {
     &-list {
-
+        * {
+            outline: none;
+        }
     }
     &-item {
         margin-bottom: 75px;
@@ -8,7 +10,7 @@
             margin-bottom: 20px;
             height: 220px;
             img {
-
+                margin: 0 auto;
             }
         }
         &-description {

@@ -1,5 +1,6 @@
+.header-line
 header.header
-    .row.expanded.column
+    .header-main.row.expanded.column
         .header-search.medium-4.column
             .search
                 .fa.fa-search
@@ -13,6 +14,8 @@ header.header
                     a
                         i.fa.fa-star
                         span Wishlist
+
+
                 li
                     a
                         i.fa.fa-shopping-bag
@@ -20,18 +23,29 @@ header.header
                 li
                     a
                         span My account
-nav.navigation
-    .row.column
-        ul.menu
-            li
-                a our kingdom
-            li
-                a ROYAL ATELIER
-            li
-                a COLLECTIONS
-            li
-                a ROYAL BABY
-            li
-                a SPECIAL SERVICES
-            li
-                a ONLINE BOUTIQUE
+    nav.navigation
+        .row.column
+            ul.menu
+                li
+                    a
+                        | our kingdom
+                        ul.submenu
+                            li.medium-4
+                                img(src='files/img/menu-img-1.jpg')
+                                p About Aristocrat Kids
+                            li.medium-4
+                                img(src='files/img/menu-img-2.jpg')
+                                p Designer
+                            li.medium-4
+                                img(src='files/img/menu-img-3.jpg')
+                                p Brand values
+                li
+                    a ROYAL ATELIER
+                li
+                    a COLLECTIONS
+                li
+                    a ROYAL BABY
+                li
+                    a SPECIAL SERVICES
+                li
+                    a ONLINE BOUTIQUE

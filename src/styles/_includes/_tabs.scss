@@ -8,7 +8,7 @@
     }
     &-title  {
         border: 1px solid #e1e1e1;
-        margin-bottom: 49px;
+        margin-bottom: 24px;
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -35,6 +35,7 @@
     &-content {
         border: 0;
         border-bottom: 1px solid #d7d7d7;
+        padding-bottom: 16px;
     }
     &-panel {
         &.active {

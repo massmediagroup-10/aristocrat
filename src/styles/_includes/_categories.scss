@@ -3,17 +3,30 @@
         position: relative;
         margin-bottom: 54px;
         display: block;
-        &:after {
-            content: '';
-            @extend %full;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0);
-            z-index: 0;
-            transition: 500ms all ease-out;
+        &:not(.preview-category) {
+            @extend %shadow;
         }
-        &:hover:after {
-            background: rgba(0, 0, 0, 0.4);
-            bottom: 0;
+        &.preview-category {
+            .categories-item-image {
+                position: relative;
+                @extend %shadow;
+            }
+            .categories-item-description {
+                text-align: center;
+                h3 {
+                    margin-top: 18px;
+                }
+                h5 {
+                    color: $light-gray;
+                    text-transform: uppercase;
+                    font-family: $roboto;
+                    line-height: 12px;
+                    margin-bottom: 16px;
+                }
+                p {
+                    font-size: $size-h5;
+                }
+            }
         }
         &-image {
             background-repeat: no-repeat;
@@ -24,37 +37,39 @@
             }
         }
         &-description {
-            z-index: 1;
-            @extend %full;
-            @extend .text-center;
-            width: 330px;
-            height: 170px;
-            background-color: rgba(0, 0, 0, 0.2);
-            border-width: 1px;
-            border-color: rgba(255, 255, 255, 0.4);
-            border-style: solid;
-            color: #fff;
-            padding: 10px;
-            p {
-                font-size: $size-h5;
-                max-width: 200px;
-                margin: 0 auto;
-            }
-            .icon-star {
-                position: absolute;
-                right: 8px;
-                bottom: 8px;
-                &.turn {
-                    top: 8px;
-                    left: 8px;
-                    right: auto;
-                    bottom: auto;
-                    transform: rotate(180deg);
+            &.vertical-box {
+                z-index: 1;
+                @extend %full;
+                @extend .text-center;
+                width: 330px;
+                height: 170px;
+                background-color: rgba(0, 0, 0, 0.2);
+                border-width: 1px;
+                border-color: rgba(255, 255, 255, 0.4);
+                border-style: solid;
+                color: #fff;
+                padding: 10px;
+                p {
+                    font-size: $size-h5;
+                    max-width: 200px;
+                    margin: 0 auto;
                 }
-                &.left {
-                    transform: scale(-1, 1);
-                    left: 8px;
-                    right: auto;
+                .icon-star {
+                    position: absolute;
+                    right: 8px;
+                    bottom: 8px;
+                    &.turn {
+                        top: 8px;
+                        left: 8px;
+                        right: auto;
+                        bottom: auto;
+                        transform: rotate(180deg);
+                    }
+                    &.left {
+                        transform: scale(-1, 1);
+                        left: 8px;
+                        right: auto;
+                    }
                 }
             }
         }
@@ -82,5 +97,20 @@
                 }
             }
         }
+    }
+}
+
+%shadow {
+    &:after {
+        content: '';
+        @extend %full;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0);
+        z-index: 0;
+        transition: 500ms all ease-out;
+    }
+    &:hover:after {
+        background: rgba(0, 0, 0, 0.4);
+        bottom: 0;
     }
 }

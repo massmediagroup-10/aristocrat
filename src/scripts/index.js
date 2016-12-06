@@ -83,14 +83,30 @@ function scrollHandler(initHeaderHeight) {
     var contentPadding = $('.content').outerHeight() - $('.content').height();
     var ofcontent = $('.header-line').offset().top - initHeaderHeight + contentPadding;
     var srollTop = $(document).scrollTop();
-
-    console.log(ofcontent);
-
     if ((srollTop) > ofcontent) {
         $('.header').addClass('fixed');
+        setInterval(function() {
+            fixedResponsive();
+        }, 0);
     } else {
         $('.header').removeClass('fixed');
+        setInterval(function() {
+            fixedResponsive();
+        }, 0);
     }
+
+}
+
+function fixedResponsive() {
+    var previewHeight = ($('.preview').length > 0) ? $('.preview').outerHeight() : 0;
+    var submenuHeight = ($('.submenu.active').length > 0) ? $('.submenu.active').outerHeight() : 0;
+    var headerHeight = $('.header').outerHeight();
+    $('.content').css({
+        'margin-top': headerHeight + previewHeight + submenuHeight
+    });
+    $('.navigation ul.submenu').css({
+        'top': headerHeight
+    });
 }
 
 function initSubmenu() {
@@ -100,8 +116,8 @@ function initSubmenu() {
         }
     });
 
-    var submenuHeight = $('.submenu').height();
     var previewTop = ($('.preview').length) ? $('.preview').offset().top : 0;
+    var submenuHeight = $('.submenu').height();
     var contentTop = $('.content').offset().top;
 
     $('.navigation li.has-submenu .submenu').stop().slideUp();
@@ -112,11 +128,11 @@ function initSubmenu() {
             that.find('.submenu').stop().slideUp(function() {
                 that.find('.submenu').stop().removeClass('active');
             });
-            $('.preview').stop().animate({
-                'top': previewTop + 0
-            });
             $('.content').stop().animate({
                 'margin-top': contentTop + 0
+            });
+            $('.preview').stop().animate({
+                'top': previewTop + 0
             });
         } else {
             $(this).find('.submenu').stop().addClass('active');
@@ -188,9 +204,13 @@ $(document).ready(function() {
     tabs();
     sideMenu();
     productRate();
+    fixedResponsive();
 
     var initHeaderHeight = $('.header').height();
     $(window).on('scroll', function() {
         scrollHandler(initHeaderHeight);
+    });
+    $(window).on('resize', function() {
+        fixedResponsive()
     });
 });

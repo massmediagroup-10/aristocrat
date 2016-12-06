@@ -82,23 +82,7 @@
         width: 100%;
         li {
             text-align: center;
-            /*&:after {
-                content: '';
-                position: absolute;
-                background: $primary-color;
-                transition: 300ms all ease;
-                height: 2px;
-                left: 50%;
-                right: 100%;
-                bottom: 0;
-            }
-            .active a,
-            &:hover {
-                &:after {
-                    left: 10px;
-                    right: 10px;
-                }
-            }*/
+
             &.has-submenu {
                 &:after {
                     content: '';
@@ -108,6 +92,23 @@
                 font-family: $times;
                 color: $primary-color;
                 text-transform: uppercase;
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background: $primary-color;
+                    transition: 300ms all ease;
+                    height: 2px;
+                    left: 50%;
+                    right: 100%;
+                    bottom: 0;
+                }
+                &:hover {
+                    &:after {
+                        left: 10px;
+                        right: 10px;
+                    }
+                }
             }
             ul.submenu {
                 position: fixed;

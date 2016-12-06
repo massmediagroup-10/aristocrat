@@ -1,0 +1,23 @@
+.tabs.column
+    ul.tabs-header(data-tabs, id='tabs')
+        li.tabs-title.active
+            a(href='#',data-tabId='1') SHOP WITH THIS DRESS
+        li.tabs-title
+            a(href='#',data-tabId='2') HELP WITH SIZE
+        li.tabs-title
+            a(href='#',data-tabId='3') DELIVERY & RETURNS
+    .tabs-content.column(data-tabs-content="tabs")
+        .tabs-panel.row(data-tab='1')
+            .recommend.large-4.column
+                include _recommend.pug
+            .recommend.large-4.column
+                include _recommend.pug
+            .recommend.large-4.column
+                include _recommend.pug
+        .tabs-panel(data-tab='2')
+            .row
+                .large-12.column
+                    p Girls handmade long length dress by Aristocrat Kids. Made from gorgeous soft, lightweight silk satin with colourful flowers and birds on a very dark green background. The fitted bodice has mother of pearl buttons to fasten, three quarter length sleeves and a sash to tie at the back. The full skirt has gathers around the waist to give a floaty feel and is lined with smooth cotton. A pretty and comfortable dress ideal for special occasions.
+                    p The fitted bodice has mother of pearl buttons to fasten, three quarter length sleeves and a sash to tie at the back. The full skirt has gathers around the waist to give a floaty feel and is lined with smooth cotton. A pretty and comfortable dress ideal for special occasions.
+        .tabs-panel(data-tab='3')
+            p

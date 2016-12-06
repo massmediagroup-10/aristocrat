@@ -16,7 +16,6 @@
         &-description {
             h5 {
                 font-family: $times;
-                font-size: $size-h5;
                 text-transform: uppercase;
                 margin-bottom: 22px;
             }
@@ -40,6 +39,13 @@
                         left: 4px;
                     }
                 }
+            }
+        }
+        h5 {
+            font-size: 16px;
+            &.secondary {
+                font-size: 14px;
+                margin-top: -16px;
             }
         }
     }

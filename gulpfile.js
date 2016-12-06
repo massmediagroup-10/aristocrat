@@ -137,7 +137,8 @@ gulp.task('fonts', function () {
 gulp.task('scripts', function() {
     return gulp.src([
             routes.scripts.js,
-            'node_modules/foundation-sites/js/foundation.orbit.js'
+            'node_modules/foundation-sites/js/foundation.core.js',
+            'node_modules/foundation-sites/js/foundation.tabs.js'
         ])
         .pipe(plumber({
             errorHandler: notify.onError({

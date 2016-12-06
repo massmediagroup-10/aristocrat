@@ -1,3 +1,7 @@
+html, body {
+    height: auto;
+}
+
 main.content {
     position: relative;
     background: #fff;
@@ -42,6 +46,8 @@ h5 {
 .button {
     text-transform: uppercase;
     min-width: 200px;
+    padding-left: 17px;
+    padding-right: 17px;
     &:hover {
         color: #3c3c3c;
     }
@@ -60,6 +66,27 @@ h5 {
             color: #fff;
         }
     }
+    .fa {
+        padding-right: 10px;
+    }
+    &.large {
+        line-height: 2.3rem;
+    }
+    &.accented {
+        background: #bf9e8f;
+        color: #fff;
+        &:hover {
+            background: #9b8175;
+        }
+    }
+    &.outline {
+        background: #fff;
+        border: 1px solid #d7d7d7;
+        color: #000;
+        &:hover {
+            background: #d7d7d7;
+        }
+    }
 }
 
 .input-group {
@@ -67,6 +94,28 @@ h5 {
         margin-bottom: 0;
         font-size: rem-calc(12);
     }
+}
+
+
+.product-label {
+    background: #ff6f74;
+    min-width: 80px;
+    padding: 0 4px;
+    line-height: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+}
+
+select {
+    border-width: 1px;
+    border-color: rgb(239, 239, 239);
+    background-size: 24px 6px;
+    font-size: 12px;
+    max-width: 200px;
+    height: 40px;
+    padding-left: 11px;
 }
 
 .icon-star {
@@ -98,3 +147,31 @@ h5 {
     transform: rotate(-135deg);
 }
 
+.innerpage {
+    .navigation {
+        border-bottom: 0;
+    }
+    .content {
+        padding-top: 0;
+        margin-top: 232px;
+    }
+}
+
+.breadcrumbs {
+    background: #e6e6e6;
+    text-align: center;
+    ul {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    li {
+        text-transform: none;
+        line-height: 22px;
+        &:not(:last-child) {
+            &:after,
+            &::after {
+                content: '>';
+            }
+        }
+    }
+}

@@ -1,0 +1,125 @@
+.detail {
+    &-top {
+        margin-bottom: 60px;
+    }
+    &-recommend {
+        margin-bottom: 47px;
+    }
+    &-main {
+        h4 {
+            font-weight: normal;
+            color: $primary-color;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+        h6 {
+            font-family: $roboto;
+            font-weight: normal;
+            color: $primary-color;
+            margin-bottom: 13px;
+        }
+    }
+    &-price {
+        margin-bottom: 15px;
+        span {
+            font-size: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 17px;
+            &.old {
+                color: #999999;
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                &:after {
+                    content: '';
+                    background: #999999;
+                    position: absolute;
+                    height: 1px;
+                    width: 100%;
+                    left: 0;
+                    right: 0;
+                    top: calc(50% + 2px);
+                }
+            }
+        }
+    }
+
+    &-size {
+        margin-bottom: 5px;
+        select {
+            margin-right: 25px;
+        }
+        a {
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &-actions {
+        margin-bottom: 23px;
+        .button {
+            min-width: 224px;
+            &:not(:last-child) {
+                margin-right:16px;
+            }
+        }
+    }
+
+    &-description {
+        line-height: 21px;
+        p {
+            line-height: 21px;
+            margin-bottom: 22px;
+        }
+        ul {
+            margin-left: 15px;
+            li {
+                list-style-type: disc;
+                margin-bottom: 4px;
+            }
+        }
+    }
+
+    &-share {
+        text-align: center;
+        color: $secondary-color;
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 36px;
+        p {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 30px;
+        }
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 15px;
+        }
+        .fa {
+            color: $secondary-color;
+            font-size: 20px;
+        }
+    }
+
+    &-slider {
+        margin-bottom: 30px;
+        .product-label {
+            float: left;
+            margin-left: 33px;
+        }
+        img {
+            margin: 6px auto;
+        }
+        &-nav {
+        }
+        &-main {
+            clear: both;
+            margin-bottom: 36px;
+            padding: 0 27px;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.recommend {
+    padding-bottom: 41px;
+    &:not(:last-child) {
+        h3 {
+            border-right: 0;
+        }
+    }
+    p {
+        color: $primary-color;
+        margin-bottom: 8px;
+    }
+    h3, h4, h5 {
+        font-family: $roboto;
+    }
+    h4 {
+        font-size: $size-h4;
+        font-weight: normal;
+        color: $primary-color;
+        letter-spacing: .6px;
+        margin-bottom: 0;
+    }
+    h5 {
+        margin-bottom: 17px;
+    }
+    select {
+        margin-bottom: 15px;
+    }
+    &-inner {
+    }
+    &-image {
+        width: 145px;
+        width: 145px;
+        float: left;
+        padding: 0 1px;
+    }
+    &-description {
+        margin-left: 170px;
+        position: relative;
+        .button {
+            min-width: auto;
+            max-width: 200px;
+            width: 100%;
+        }
+        @media #{$large-up} {
+            &:after {
+                content: '';
+                position: absolute;
+                right: -15px;
+                top: -18px;
+                bottom: 0;
+                border-right: 1px solid #d7d7d7;
+            }
+        }
+    }
+    &:last-child {
+        .recommend-description:after {
+            content: none;
+        }
+    }
+}

@@ -165,11 +165,29 @@ function foundation() {
     });
 }
 
+function sideMenu() {
+    $('.side-menu>li>a').siblings('ul').slideUp(0);
+    $(document).on('click', '.side-menu>li>a', function() {
+        if ($(this).siblings('ul').length) {
+            $(this).toggleClass('active');
+            $(this).siblings('ul').slideToggle();
+        }
+    });
+}
+
+function productRate() {
+    $(document).on('click', '.product-rate', function() {
+        $(this).toggleClass('active');
+    });
+}
+
 $(document).ready(function() {
     initCarousel();
     initSubmenu();
     initSlider();
     tabs();
+    sideMenu();
+    productRate();
 
     var initHeaderHeight = $('.header').height();
     $(window).on('scroll', function() {

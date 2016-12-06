@@ -1,0 +1,50 @@
+ul.side-menu {
+    & > li {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        & > a {
+            text-transform: uppercase;
+            line-height: 22px;
+            .fa {
+                position: relative;
+                top: 5px;
+                float: left;
+                //transition: 300ms all ease;
+                transform-origin: 0 center;
+            }
+            &.active {
+                .fa {
+                    transform: rotate(90deg);
+                    top: 3px;
+                }
+            }
+            span {
+                display: block;
+                margin-left: 14px;
+            }
+        }
+        ul {
+            margin-left: 13%;
+            margin-top: 8px;
+            li {
+                margin-bottom: 11px;
+                a {
+                    .fa {
+                        font-size: 8px;
+                        margin-right: 4px;
+                    }
+                    &:hover {
+                        span {
+                            color: $warning-color;
+                        }
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+}

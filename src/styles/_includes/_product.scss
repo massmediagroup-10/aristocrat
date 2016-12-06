@@ -6,6 +6,7 @@
     }
     &-item {
         margin-bottom: 75px;
+        position: relative;
         &-image {
             margin-bottom: 20px;
             height: 220px;
@@ -17,10 +18,15 @@
             h5 {
                 font-family: $times;
                 text-transform: uppercase;
-                margin-bottom: 22px;
+                margin-bottom: 6px
             }
             p {
                 margin-bottom: 7px;
+                &.secondary {
+                    font-size: 80%;
+                    line-height: 7px;
+                    margin-bottom: 13px;
+                }
             }
             a {
                 color: $body-font-color;
@@ -28,6 +34,8 @@
             .detail {
                 font-size: $size-h5;
                 text-transform: uppercase;
+                margin-top: 21px;
+                display: block;
                 .fa {
                     margin-left: 8px;
                     left: 0;
@@ -45,7 +53,20 @@
             font-size: 16px;
             &.secondary {
                 font-size: 14px;
-                margin-top: -16px;
+            }
+        }
+    }
+    &-rate {
+        .fa {
+            color: #808080;
+            font-size: 18px;
+            transition: 300ms all ease;
+            @extend .fa-star-o;
+        }
+        &.active {
+            .fa {
+                @extend .fa-star;
+                color: #ecc3b2;
             }
         }
     }

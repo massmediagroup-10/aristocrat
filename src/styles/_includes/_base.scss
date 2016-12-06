@@ -30,6 +30,14 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+.thirdheader {
+    font-size: 18px;
+    font-family: $roboto;
+    font-weight: 300;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
 h2 {
     text-transform: uppercase;
 }
@@ -98,7 +106,7 @@ h5 {
 
 
 .product-label {
-    background: #ff6f74;
+    display: inline-block;
     min-width: 80px;
     padding: 0 4px;
     line-height: 20px;
@@ -106,6 +114,13 @@ h5 {
     text-transform: uppercase;
     color: #fff;
     text-align: center;
+    &.warning {
+        background: $warning-color;
+    }
+    &.success {
+        background: $success-color;
+        color: $secondary-color;
+    }
 }
 
 select {
@@ -116,6 +131,7 @@ select {
     max-width: 200px;
     height: 40px;
     padding-left: 11px;
+    color: $primary-color;
 }
 
 .icon-star {
@@ -171,6 +187,7 @@ select {
             &:after,
             &::after {
                 content: '>';
+                color: $primary-color;
             }
         }
     }
@@ -181,5 +198,29 @@ select {
         margin-bottom: 8px;
         line-height: 21px;
         letter-spacing: 0.23px;
+    }
+}
+
+.pagination {
+    span {
+        color: $pagination-item-color;
+        display: block;
+        padding: $pagination-item-padding;
+        border-radius: $global-radius;
+        cursor: default;
+    }
+    .fa {
+        font-size: 17px;
+        color: $medium-gray;
+    }
+    .arrow {
+        margin: 0 15px;
+        &:not(.unavailable) {
+            &:hover {
+                .fa {
+                    color: $primary-color;
+                }
+            }
+        }
     }
 }

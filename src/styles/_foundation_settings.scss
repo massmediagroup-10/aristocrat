@@ -50,14 +50,14 @@ $global-font-size: 12px;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-    primary: #666666,
+    primary: #4c4c4c,
     secondary: #000000,
-    success: #3adb76,
-    warning: #ffae00,
+    success: #a1ffcf,
+    warning: #ff5b5b,
     alert: #ec5840,
 );
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
+$light-gray: #999999;
+$medium-gray: #cccccc;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
@@ -428,14 +428,14 @@ $orbit-control-zindex: 10;
 // 26. Pagination
 // --------------
 
-$pagination-font-size: rem-calc(14);
+$pagination-font-size: rem-calc(12);
 $pagination-margin-bottom: $global-margin;
 $pagination-item-color: $black;
-$pagination-item-padding: rem-calc(3 10);
+$pagination-item-padding: rem-calc(2 7);
 $pagination-item-spacing: rem-calc(1);
 $pagination-radius: $global-radius;
-$pagination-item-background-hover: $light-gray;
-$pagination-item-background-current: $primary-color;
+$pagination-item-background-hover: $medium-gray;
+$pagination-item-background-current: $medium-gray;
 $pagination-item-color-current: foreground($pagination-item-background-current);
 $pagination-item-color-disabled: $medium-gray;
 $pagination-ellipsis-color: $black;

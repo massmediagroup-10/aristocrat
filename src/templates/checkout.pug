@@ -1,0 +1,27 @@
+doctype html
+html
+    include _includes/_head.pug
+    body.starterkit.innerpage
+        .header-line
+        header.header
+            include _includes/_header.pug
+            .breadcrumbs
+                ul
+                    li
+                        a(href='/') Home
+                    li
+                        a(href='#') Royal Boutique
+                    li
+                        a(href='#') Aristocrat Kids
+                    li
+                        a(href='#') Dresses
+                    li
+                        span Queen Flora
+        main.content
+        
+        footer.footer
+            include _includes/_footer.pug
+
+    script(src="js/jquery.min.js")
+    script(src="js/script.js")
+    script(src="js/slick.min.js")

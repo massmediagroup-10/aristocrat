@@ -10,15 +10,96 @@ html
                     li
                         a(href='/') Home
                     li
-                        a(href='#') Royal Boutique
-                    li
-                        a(href='#') Aristocrat Kids
-                    li
-                        a(href='#') Dresses
-                    li
-                        span Queen Flora
+                        span Shopping bag
         main.content
-        
+            .shopping.row.column
+                h4 DELIVERY OPTIONS
+                .row
+                    .small-12.large-4.column.float-right
+                        .shopping-summary
+                            p.small
+                                span order
+                                em $1149.84
+                            p.small
+                                span Delivery
+                                em $12
+                            p
+                                span TOTAL
+                                em $1161.84
+                            a.button.outline.large.expanded EDIT ORDER
+                    .small-12.large-8.column.float-right
+                        .checkout-item.form
+                            .checkout-title
+                                span regular customer
+                            .row
+                                .large-6.column
+                                    label
+                                        |E-mail
+                                        input(type="email",placeholder="E-mail Adress")
+                                .large-6.column
+                                    label
+                                        | Password
+                                        input(type="password",placeholder="Your password")
+                                    a.float-right Forgot your password?
+                            input.button.accented.large(type="submit",value="Enter")
+                            a.button-link Are you New customer?
+                        .checkout-item.form
+                            .checkout-title
+                                span New customer
+                            .row
+                                .large-6.column
+                                    label
+                                        |Name *
+                                        input(type="email",placeholder="Your Name")
+                                .large-6.column
+                                    label
+                                        |Surname *
+                                        input(type="password",placeholder="Your Surname")
+                                    a.float-right Forgot your password?
+                            .row
+                                .large-6.column
+                                    label
+                                        | E-mail *
+                                        input(type="email",placeholder="E-mail Adress")
+                                .large-6.column
+                                    label
+                                        | Phone
+                                        input(type="tel",placeholder="Your Phone")
+                            .row.column
+                                .large-6
+                                    h5 Delivery *
+                                    .filter-field.radio-group
+                                        input#radio1(type='radio',name="delivery")
+                                        label.radio(for='radio1')
+                                            span.box
+                                                i.fa
+                                            | Delivery service first
+                                        p It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                                    .filter-field.radio-group
+                                        input#radio2(type='radio',name="delivery")
+                                        label.radio(for='radio2')
+                                            span.box
+                                                i.fa
+                                            | Delivery service first
+                                        p It is a long established fact that a reader will be distracted by the readable content.
+                                .large-6
+                                    h5 Payment method 1
+                                    .filter-field.radio-group
+                                        input#radio3(type='radio',name="payment")
+                                        label.radio(for='radio3')
+                                            span.box
+                                                i.fa
+                                            | Payment method 1
+                                        p It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                                    .filter-field.radio-group
+                                        input#radio4(type='radio',name="payment")
+                                        label.radio(for='radio4')
+                                            span.box
+                                                i.fa
+                                            | Payment method 2
+                                        p It is a long established fact that a reader will be distracted by the readable content.
+                        input.button.accented.large(type="submit",value="Enter")
+
         footer.footer
             include _includes/_footer.pug
 

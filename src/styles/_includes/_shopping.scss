@@ -29,10 +29,13 @@
         }
     }
     &-summary {
-        font-size: 20px;
         text-transform: uppercase;
         p {
+            font-size: 20px;
             margin-bottom: 29px;
+            &.small {
+                font-size: 16px;
+            }
             span {
                 font-family: $times;
                 color: $primary-color;
@@ -46,13 +49,22 @@
         }
         .button {
             margin: 0 0px 10px 0px;
-            width: 220px;
+            min-width: 220px;
             &:first-child {
                 margin-right: 15px;
             }
         }
         &-actions {
 
+        }
+    }
+}
+
+.checkout {
+    &-item {
+        margin-bottom: 30px;
+        [type="submit"] {
+            margin-bottom: 0;
         }
     }
 }

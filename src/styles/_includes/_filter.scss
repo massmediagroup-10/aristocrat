@@ -9,6 +9,10 @@
             background: $activeColor;
             margin-bottom: 6px;
         }
+        &.gray {
+            background: #d9d9d9;
+            margin-bottom: 0;
+        }
         label {
             font-size: 1rem;
         }

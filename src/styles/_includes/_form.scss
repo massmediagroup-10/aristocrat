@@ -34,3 +34,21 @@
     }
 }
 
+.form {
+    [type='text'],
+    [type='password'],
+    [type='date'],
+    [type='datetime'],
+    [type='datetime-local'],
+    [type='email'],
+    [type='number'],
+    [type='search'],
+    [type='tel'] {
+        height: 40px;
+        border: 1px solid #efefef !important;
+        padding-left: 12px;
+        &:not(:focus) {
+            box-shadow: none;
+        }
+    }
+}

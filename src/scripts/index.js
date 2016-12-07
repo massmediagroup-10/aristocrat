@@ -98,15 +98,17 @@ function scrollHandler(initHeaderHeight) {
 }
 
 function fixedResponsive() {
-    var previewHeight = ($('.preview').length > 0) ? $('.preview').outerHeight() : 0;
-    var submenuHeight = ($('.submenu.active').length > 0) ? $('.submenu.active').outerHeight() : 0;
-    var headerHeight = $('.header').outerHeight();
-    $('.content').css({
-        'margin-top': headerHeight + previewHeight + submenuHeight
-    });
-    $('.navigation ul.submenu').css({
-        'top': headerHeight
-    });
+    if ($('.innerpage').length > 0) {
+        var previewHeight = ($('.preview').length > 0) ? $('.preview').outerHeight() : 0;
+        var submenuHeight = ($('.submenu.active').length > 0) ? $('.submenu.active').outerHeight() : 0;
+        var headerHeight = $('.header').outerHeight();
+        $('.content').css({
+            'margin-top': headerHeight + previewHeight + submenuHeight
+        });
+        $('.navigation ul.submenu').css({
+            'top': headerHeight
+        });
+    }
 }
 
 function initSubmenu() {

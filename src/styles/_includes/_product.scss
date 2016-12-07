@@ -70,6 +70,18 @@
             }
         }
     }
+    &-thumbnail {
+        float: left;
+    }
+    &-summary {
+        margin-left: 110px;
+        .product-item {
+            h5 {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
+
 .trending {
 }

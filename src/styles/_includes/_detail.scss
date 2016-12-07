@@ -25,7 +25,9 @@
             font-size: 20px;
             display: inline-block;
             vertical-align: middle;
-            margin-right: 17px;
+            &:not(:last-child) {
+                margin-right: 17px;
+            }
             &.old {
                 color: #999999;
                 position: relative;
@@ -40,6 +42,14 @@
                     left: 0;
                     right: 0;
                     top: calc(50% + 2px);
+                }
+            }
+        }
+        &.small {
+            span {
+                font-size: 14px;
+                &:after {
+                    top: calc(50% + 0px);
                 }
             }
         }

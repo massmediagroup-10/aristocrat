@@ -101,6 +101,7 @@ h5 {
     input {
         margin-bottom: 0;
         font-size: rem-calc(12);
+        padding-left: 12px;
     }
 }
 
@@ -116,6 +117,7 @@ h5 {
     text-align: center;
     &.warning {
         background: $warning-color;
+        color: #fff;
     }
     &.success {
         background: $success-color;
@@ -132,6 +134,16 @@ select {
     height: 40px;
     padding-left: 11px;
     color: $primary-color;
+}
+
+&.warning {
+    color: $warning-color;
+}
+
+a {
+    .fa {
+        margin-right: 6px;
+    }
 }
 
 .icon-star {

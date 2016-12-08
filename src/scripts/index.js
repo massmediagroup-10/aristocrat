@@ -207,15 +207,15 @@ function checkoutItem() {
         var checkout = $(this).parent();
         var item = $(this).closest('.checkout-item');
 
-        $('.checkout-body').slideUp();
-        $('.checkout-item').not(item).removeClass('active');
+        $('.checkout-body').stop().slideUp();
+        $('.checkout-item').not(item).stop().removeClass('active');
 
         if (item.hasClass('active')) {
-            item.removeClass('active');
-            checkout.siblings('.checkout-body').slideUp();
+            item.stop().removeClass('active');
+            checkout.siblings('.checkout-body').stop().slideUp();
         } else {
-            item.addClass('active');
-            checkout.siblings('.checkout-body').slideDown();
+            item.stop().addClass('active');
+            checkout.siblings('.checkout-body').stop().slideDown();
         }
     });
 }

@@ -32,6 +32,14 @@
                 color: #bfbfbf;
             }
         }
+        &.active {
+            .checkout-title {
+                .fa {
+                    transform: rotate(90deg);
+                    top: 3px;
+                }
+            }
+        }
     }
     &-title {
         font-family: $times;
@@ -60,12 +68,7 @@
                 }
             }
         }
-        &.active {
-            .fa {
-                transform: rotate(90deg);
-                top: 3px;
-            }
-        }
+
     }
     &-filter {
         &:not(:last-child) {

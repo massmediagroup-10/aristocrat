@@ -25,6 +25,7 @@
             font-size: 20px;
             display: inline-block;
             vertical-align: middle;
+            white-space: nowrap;
             &:not(:last-child) {
                 margin-right: 17px;
             }

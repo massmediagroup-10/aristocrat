@@ -12,93 +12,148 @@ html
                     li
                         span Shopping bag
         main.content
-            .shopping.row.column
-                h4 DELIVERY OPTIONS
+            .checkout.row.column
+                h4.uppercase Checkout
                 .row
                     .small-12.large-4.column.float-right
-                        .shopping-summary
-                            p.small
-                                span order
-                                em $1149.84
-                            p.small
-                                span Delivery
-                                em $12
-                            p
-                                span TOTAL
-                                em $1161.84
-                            a.button.outline.large.expanded EDIT ORDER
+                        .shopping-card
+                            .product-item
+                                .row
+                                    .small-9.column
+                                        a.product-thumbnail
+                                            img.thumbnail(src='http://placehold.it/85x85')
+                                        .product-summary.texty
+                                            h5
+                                                a QUEEN FLORA
+                                            p Product code 254326
+                                            p Size: 10 years
+                                            p Qty: 1
+                                    .small-3.column
+                                        .detail-price.small.text-right
+                                            span $580.92
+                            .product-item
+                                .row
+                                    .small-9.column
+                                        a.product-thumbnail
+                                            img.thumbnail(src='http://placehold.it/85x85')
+                                        .product-summary.texty
+                                            h5
+                                                a QUEEN FLORA
+                                            p Product code 254326
+                                            p Size: 10 years
+                                            p Qty: 1
+                                    .small-3.column
+                                        .detail-price.small.text-right
+                                            span $580.92
+                            .shopping-summary
+                                p.small.row
+                                    span.small-6.column order
+                                    em.small-6.column.text-right $1149.84
+                                p.small.row
+                                    span.small-6.column Delivery
+                                    em.small-6.column.text-right $12
+                                p.row
+                                    span.small-6.column TOTAL
+                                    em.small-6.column.text-right $1161.84
+                                a.button.outline.large.expanded EDIT ORDER
                     .small-12.large-8.column.float-right
                         .checkout-item.form
-                            .checkout-title
-                                span regular customer
-                            .row
-                                .large-6.column
-                                    label
-                                        |E-mail
-                                        input(type="email",placeholder="E-mail Adress")
-                                .large-6.column
-                                    label
-                                        | Password
-                                        input(type="password",placeholder="Your password")
-                                    a.float-right Forgot your password?
-                            input.button.accented.large(type="submit",value="Enter")
-                            a.button-link Are you New customer?
+                            form(name="existing_customer")
+                                .checkout-title
+                                    a
+                                        i.fa.fa-angle-right
+                                        span EXISTING CUSTOMER
+                                .checkout-body
+                                    .row
+                                        .large-6.column
+                                            label
+                                                |E-mail
+                                                input(type="email",placeholder="E-mail Adress", required="required")
+                                        .large-6.column
+                                            label
+                                                | Password
+                                                input(type="password",placeholder="Your password", required="required")
+                                            a.float-right Forgot your password?
+                                    input.button.accented.large(type="submit",value="Enter")
                         .checkout-item.form
-                            .checkout-title
-                                span New customer
-                            .row
-                                .large-6.column
-                                    label
-                                        |Name *
-                                        input(type="email",placeholder="Your Name")
-                                .large-6.column
-                                    label
-                                        |Surname *
-                                        input(type="password",placeholder="Your Surname")
-                                    a.float-right Forgot your password?
-                            .row
-                                .large-6.column
-                                    label
-                                        | E-mail *
-                                        input(type="email",placeholder="E-mail Adress")
-                                .large-6.column
-                                    label
-                                        | Phone
-                                        input(type="tel",placeholder="Your Phone")
-                            .row.column
-                                .large-6
-                                    h5 Delivery *
-                                    .filter-field.radio-group
-                                        input#radio1(type='radio',name="delivery")
-                                        label.radio(for='radio1')
-                                            span.box
-                                                i.fa
-                                            | Delivery service first
-                                        p It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                                    .filter-field.radio-group
-                                        input#radio2(type='radio',name="delivery")
-                                        label.radio(for='radio2')
-                                            span.box
-                                                i.fa
-                                            | Delivery service first
-                                        p It is a long established fact that a reader will be distracted by the readable content.
-                                .large-6
-                                    h5 Payment method 1
-                                    .filter-field.radio-group
-                                        input#radio3(type='radio',name="payment")
-                                        label.radio(for='radio3')
-                                            span.box
-                                                i.fa
-                                            | Payment method 1
-                                        p It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                                    .filter-field.radio-group
-                                        input#radio4(type='radio',name="payment")
-                                        label.radio(for='radio4')
-                                            span.box
-                                                i.fa
-                                            | Payment method 2
-                                        p It is a long established fact that a reader will be distracted by the readable content.
-                        input.button.accented.large(type="submit",value="Enter")
+                            form(name="new_customer")
+                                .checkout-title
+                                    a
+                                        i.fa.fa-angle-right
+                                        span New customer
+                                .checkout-body
+                                    .row
+                                        .large-6.column
+                                            label
+                                                |Name *
+                                                input(type="text",placeholder="Your Name", required="required")
+                                        .large-6.column
+                                            label
+                                                |Surname *
+                                                input(type="password",placeholder="Your Surname", required="required")
+                                    .row
+                                        .large-6.column
+                                            label
+                                                | E-mail *
+                                                input(type="email",placeholder="E-mail Adress", required="required")
+                                        .large-6.column
+                                            label
+                                                | Phone
+                                                input(type="tel",placeholder="Your Phone")
+                                    .row.column
+                                        .checkout-filter.large-6
+                                            h5 Delivery *
+                                            .filter-field.radio-group
+                                                input#radio1(type='radio',name="delivery")
+                                                label.radio(for='radio1')
+                                                    span.box
+                                                        i.fa
+                                                    | Delivery service first
+                                                p It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                                            .filter-field.radio-group
+                                                input#radio2(type='radio',name="delivery")
+                                                label.radio(for='radio2')
+                                                    span.box
+                                                        i.fa
+                                                    | Delivery service first
+                                                p It is a long established fact that a reader will be distracted by the readable content.
+                                        .checkout-filter.large-6
+                                            h5 Payment method 1
+                                            .filter-field.radio-group
+                                                input#radio3(type='radio',name="payment")
+                                                label.radio(for='radio3')
+                                                    span.box
+                                                        i.fa
+                                                    | Payment method 1
+                                                p It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                                            .filter-field.radio-group
+                                                input#radio4(type='radio',name="payment")
+                                                label.radio(for='radio4')
+                                                    span.box
+                                                        i.fa
+                                                    | Payment method 2
+                                                p It is a long established fact that a reader will be distracted by the readable content.
+                                    .checkout-additional
+                                        .filter-field.checkbox-group
+                                            input#checkbox1(type='checkbox')
+                                            label.checkbox(for='checkbox1')
+                                                span.box
+                                                    i.fa.fa-check
+                                                | I`m agree to the
+                                                a terms,
+                                        .filter-field.checkbox-group
+                                            input#checkbox2(type='checkbox')
+                                            label.checkbox(for='checkbox2')
+                                                span.box
+                                                    i.fa.fa-check
+                                                | I’ want to subscribe to the mailing
+                                        .filter-field.checkbox-group
+                                            input#checkbox3(type='checkbox')
+                                            label.checkbox(for='checkbox3')
+                                                span.box
+                                                    i.fa.fa-check
+                                                | I want to register
+                                    input.button.accented.large(type="submit",value="confirm")
 
         footer.footer
             include _includes/_footer.pug

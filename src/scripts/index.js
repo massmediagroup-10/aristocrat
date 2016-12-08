@@ -199,6 +199,22 @@ function productRate() {
     });
 }
 
+function checkoutItem() {
+    $('.checkout-body').slideUp(0);
+    $(document).on('click', '.checkout-title a', function() {
+        var checkout = $(this).parent();
+        $('.checkout-body').slideUp();
+        $('.checkout-title').not(checkout).removeClass('active');
+        if (checkout.hasClass('active')) {
+            checkout.removeClass('active');
+            $(this).parent().siblings('.checkout-body').slideUp();
+        } else {
+            checkout.addClass('active');
+            $(this).parent().siblings('.checkout-body').slideDown();
+        }
+    });
+}
+
 $(document).ready(function() {
     initCarousel();
     initSubmenu();
@@ -207,6 +223,11 @@ $(document).ready(function() {
     sideMenu();
     productRate();
     fixedResponsive();
+    checkoutItem();
+
+    $('form').each(function() {
+        $(this).validate();
+    });
 
     var initHeaderHeight = $('.header').height();
     $(window).on('scroll', function() {

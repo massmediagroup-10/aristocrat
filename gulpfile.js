@@ -138,7 +138,7 @@ gulp.task('scripts', function() {
     return gulp.src([
             routes.scripts.js,
             'node_modules/foundation-sites/js/foundation.core.js',
-            'node_modules/foundation-sites/js/foundation.tabs.js'
+            'node_modules/jquery-validation/dist/jquery.validate.min.js'
         ])
         .pipe(plumber({
             errorHandler: notify.onError({

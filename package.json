@@ -45,7 +45,8 @@
         "gulp-uglify": "^2.0.0",
         "gulp-uncss": "^1.0.6",
         "merge-stream": "^1.0.0",
-        "slick-carousel": "^1.6.0"
+        "slick-carousel": "^1.6.0",
+        "jquery-validation": "^1.16.0"
     },
     "devDependencies": {
         "mocha": "*"

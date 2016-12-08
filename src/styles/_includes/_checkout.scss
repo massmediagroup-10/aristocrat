@@ -1,0 +1,90 @@
+.checkout {
+    color: $primary-color;
+    h4 {
+
+    }
+    &-item {
+        margin-bottom: 44px;
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        input {
+            margin-bottom: 6px;
+        }
+        [type="submit"] {
+            margin-bottom: 0;
+        }
+        h5 {
+            line-height: 29px;
+            font-family: $roboto;
+        }
+        & > .row {
+            margin-bottom: 6px;
+        }
+        .radio-group {
+            line-height: 21px;
+            margin-bottom: 14px;
+            p {
+                margin-top: 4px;
+                line-height: 21px;
+                color: #bfbfbf;
+            }
+        }
+    }
+    &-title {
+        font-family: $times;
+        border-bottom: 1px solid $button-background;
+        padding-bottom: 2px;
+        margin-bottom: 13px;
+        text-transform: uppercase;
+        line-height: 23px;
+
+        .fa {
+            margin-right: 9px;
+            font-size: 16px;
+            width: 10px;
+            position: relative;
+            //transition: 300ms all ease;
+            left: 0;
+        }
+        span {
+            font-size: 14px;
+        }
+        a {
+            &:hover {
+                text-decoration: none;
+                .fa {
+                   // left: 3px;
+                }
+            }
+        }
+        &.active {
+            .fa {
+                transform: rotate(90deg);
+                top: 3px;
+            }
+        }
+    }
+    &-filter {
+        &:not(:last-child) {
+            margin-bottom: 18px;
+        }
+    }
+    &-additional {
+        margin-bottom: 15px;
+    }
+    .checkbox-group {
+        margin-bottom: 0px;
+        label {
+            font-size: 12px;
+            line-height: 22px;
+        }
+        .checkbox {
+            .box {
+                margin-right: 12px;
+            }
+        }
+    }
+}

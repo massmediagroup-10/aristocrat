@@ -1,0 +1,116 @@
+doctype html
+html
+    include _includes/_head.pug
+    body.starterkit.innerpage
+        .header-line
+        header.header
+            include _includes/_header.pug
+            .breadcrumbs
+                ul
+                    li
+                        a(href='/') Home
+                    li
+                        span Shopping bag
+        main.content
+            .shopping.row.column
+                h4.uppercase SHOPPING BAG
+                .shopping-table.form
+                    .shopping-table-th
+                        .row
+                            .small-3.column
+                                h5 Product
+                            .small-3.column
+                                h5 Size
+                            .small-2.column
+                                h5 Price
+                            .small-1.column
+                                h5 Qty
+                            .small-3.column
+                                h5 Subtotal
+                    .shopping-table-tr.product-item
+                        .row
+                            .small-3.column
+                                a.product-thumbnail
+                                    img.thumbnail(src='http://placehold.it/85x85')
+                                .product-summary.texty
+                                    h5
+                                        a QUEEN FLORA
+                                    p Product code 254326
+                            .small-3.column
+                                select
+                                    option S
+                                    option M
+                                    option L
+                            .small-2.column.texty
+                                .detail-price.small
+                                    span $580.92
+                                    span.old $637.92
+                            .small-1.column
+                                input(type="number",min="1")
+                            .small-3.column.texty
+                                .row
+                                    .large-6.column
+                                        .detail-price.small
+                                            span $580.92
+                                    .large-6.column.large-text-right
+                                        p
+                                            a Add to Wishlist
+                                        p
+                                            a
+                                                i.fa.fa-remove.warning
+                                                | Remove
+                    .shopping-table-tr.product-item
+                        .row
+                            .small-3.column
+                                a.product-thumbnail
+                                    img.thumbnail(src='http://placehold.it/85x85')
+                                .product-summary.texty
+                                    h5
+                                        a QUEEN FLORA
+                                    p Product code 254326
+                            .small-3.column
+                                select
+                                    option S
+                                    option M
+                                    option L
+                            .small-2.column.texty
+                                .detail-price.small
+                                    span $580.92
+                                    span.old $637.92
+                            .small-1.column
+                                input(type="number",min="1")
+                            .small-3.column.texty
+                                .row
+                                    .large-6.column
+                                        .detail-price.small
+                                            span $580.92
+                                    .large-6.column.large-text-right
+                                        p
+                                            a Add to Wishlist
+                                        p
+                                            a
+                                                i.fa.fa-remove.warning
+                                                | Remove
+                .shopping-summary.large-5.float-right
+                    p.text-center
+                        span TOTAL
+                        em $1161.84
+                    .shopping-summary-actions.text-right
+                        a.button.outline.large CONTINUE SHOPPING
+                        a.button.accented.large PROCEED TO CHECKOUT
+
+            h2.subheader YOU LOOKED, BUT DID NOT COMPLETE A PURCHASE
+            .product-list.row
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+
+        footer.footer
+            include _includes/_footer.pug
+
+    script(src="js/jquery.min.js")
+    script(src="js/script.js")
+    script(src="js/slick.min.js")

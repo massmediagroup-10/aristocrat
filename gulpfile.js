@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    sass = require('gulp-sass'), 
+    sass = require('gulp-sass'),
     pug = require('gulp-pug'),
     jshint = require('gulp-jshint'),
     concat = require('gulp-concat'),
@@ -17,7 +17,8 @@ var gulp = require('gulp'),
     cssimport = require('gulp-cssimport'),
     beautify = require('gulp-beautify'),
     sourcemaps = require('gulp-sourcemaps'),
-    critical = require('critical').stream;
+    critical = require('critical').stream,
+    merge = require('merge-stream');
 
 /* baseDirs: baseDirs for the project */
 
@@ -33,7 +34,9 @@ var routes = {
     styles: {
         scss: baseDirs.src+'styles/*.scss',
         _scss: baseDirs.src+'styles/_includes/*.scss',
-        css: baseDirs.assets+'css/'
+        css: baseDirs.assets+'css/',
+        fonts: baseDirs.src+'fonts/',
+        fontsdist: baseDirs.assets+'fonts/'
     },
 
     templates: {
@@ -46,14 +49,14 @@ var routes = {
         js: baseDirs.src+'scripts/*.js',
         jsmin: baseDirs.assets+'js/'
     },
-
     files: {
         html: 'dist/',
         images: baseDirs.src+'images/*',
         imgmin: baseDirs.assets+'files/img/',
         cssFiles: baseDirs.assets+'css/*.css',
         htmlFiles: baseDirs.dist+'*.html',
-        styleCss: baseDirs.assets+'css/style.css'
+        styleCss: baseDirs.assets+'css/style.css',
+        fonts: baseDirs.assets+'fonts/'
     },
 
     deployDirs: {
@@ -96,6 +99,10 @@ gulp.task('styles', function() {
         }))
         .pipe(sourcemaps.init())
             .pipe(sass({
+                includePaths: [
+                    'node_modules/foundation-sites/scss',
+                    'node_modules/font-awesome/scss'
+                ],
                 outputStyle: 'compressed'
             }))
             .pipe(autoprefixer('last 3 versions'))
@@ -110,10 +117,29 @@ gulp.task('styles', function() {
         }));
 });
 
+
+// FONTS
+gulp.task('fonts', function () {
+    return gulp.src([
+            routes.styles.fonts + '/*.*',
+            'node_modules/font-awesome/fonts',
+        ])
+        .pipe(gulp.dest(routes.styles.fontsdist))
+        .pipe(browserSync.stream())
+        .pipe(notify({
+            title: 'Fonts placed succesfully!',
+            message: 'fonts task completed.'
+        }));
+});
+
 /* Scripts (js) ES6 => ES5, minify and concat into a single file.*/
 
 gulp.task('scripts', function() {
-    return gulp.src(routes.scripts.js)
+    return gulp.src([
+            routes.scripts.js,
+            'node_modules/foundation-sites/js/foundation.core.js',
+            'node_modules/jquery-validation/dist/jquery.validate.min.js'
+        ])
         .pipe(plumber({
             errorHandler: notify.onError({
                 title: "Error: Babel and Concat failed.",
@@ -122,8 +148,8 @@ gulp.task('scripts', function() {
         }))
         .pipe(sourcemaps.init())
             .pipe(concat('script.js'))
-            .pipe(babel())
-            .pipe(uglify())
+            //.pipe(babel())
+            //.pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(routes.scripts.jsmin))
         .pipe(browserSync.stream())
@@ -141,7 +167,7 @@ gulp.task('lint', function() {
 			lookup: true,
 			linter: 'jshint',
 		}))
-		.pipe(jshint.reporter('default')); 
+		.pipe(jshint.reporter('default'));
 });
 
 /* Image compressing task */
@@ -183,10 +209,11 @@ gulp.task('serve', function() {
     browserSync.init({
         server: './dist/'
     });
-    
-    gulp.watch([routes.styles.scss, routes.styles._scss], ['styles']); 
+
+    gulp.watch([routes.styles.scss, routes.styles._scss], ['styles']);
     gulp.watch([routes.templates.pug, routes.templates._pug], ['templates']);
     gulp.watch(routes.scripts.js, ['scripts', 'beautify']);
+    gulp.watch(routes.files.images, ['images']);
 });
 
 /* Optimize your project */
@@ -237,9 +264,23 @@ gulp.task('critical', function () {
         }));
 });
 
-gulp.task('dev', ['templates', 'styles', 'scripts',  'images', 'serve']);
+/* Move slick-carousel to correct folders */
 
-gulp.task('build', ['templates', 'styles', 'scripts', 'images']);
+gulp.task('slick', function() {
+    var slick = 'node_modules/slick-carousel/slick/';
+    var jquery_path = 'node_modules/slick-carousel/node_modules/jquery/dist/jquery.min.js';
+    var jquery = gulp.src(jquery_path)
+        .pipe(gulp.dest(routes.scripts.jsmin));
+    var js = gulp.src(slick + 'slick.min.js')
+        .pipe(gulp.dest(routes.scripts.jsmin));
+    var css = gulp.src(slick + 'slick.css')
+        .pipe(gulp.dest(routes.styles.css));
+    return merge(js, css, jquery);
+});
+
+gulp.task('dev', ['templates', 'styles', 'fonts', 'scripts',  'images', 'slick', 'serve']);
+
+gulp.task('build', ['templates', 'styles', 'fonts', 'scripts', 'images', 'slick']);
 
 gulp.task('optimize', ['uncss', 'critical', 'images']);
 

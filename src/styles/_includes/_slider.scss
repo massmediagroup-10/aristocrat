@@ -1,0 +1,125 @@
+.preview {
+    margin-bottom: 30px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 179px;
+    z-index: 1;
+    img {
+        width: 100%;
+    }
+}
+
+.collection-slider {
+    position: relative;
+    img {
+        width: 100%;
+    }
+    .collection-item-description {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        padding-left: rem-calc(50);
+        p {
+            line-height: 21px;
+            letter-spacing: 0.25px;
+        }
+        .vertical-box {
+            height: 100%;
+        }
+    }
+}
+
+.slick-slider {
+    overflow: hidden;
+    * {
+        outline: none !important;
+    }
+}
+
+.product-list {
+    .slick-arrow {
+        width: 18px;
+        height: 18px;
+        display: block;
+        position: absolute;
+        top: calc(50% - 50px);
+        z-index: 2;
+        border-bottom: 1px solid #808080;
+        border-left: 1px solid #808080;
+        text-indent: -99999px;
+        &.slick-prev {
+            left: 5px;
+            transform: rotate(45deg);
+        }
+        &.slick-next {
+            right: 5px;
+            transform: rotate(-135deg);
+        }
+    }
+}
+
+.preview-slider {
+    .slick-arrow {
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        top: calc(50% - 37.5px);
+        z-index: 2;
+        text-indent: -99999px;
+        font-size: 0;
+        transition: 400ms all ease;
+        &.slick-prev {
+            left: 10px;
+            &:before {
+                transform: rotate(45deg);
+                right: -9px;
+            }
+        }
+        &.slick-next {
+            right: 10px;
+            &:before {
+                transform: rotate(-135deg);
+                left: -9px;
+            }
+        }
+        &:before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            border-bottom: 1px solid #fff;
+            border-left: 1px solid #fff;
+            display: block;
+            @extend %full;
+        }
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    }
+}
+
+.detail-slider {
+    .slick-arrow {
+        width: 32px;
+        height: 32px;
+        display: block;
+        position: absolute;
+        top: calc(50% - 16px);
+        z-index: 2;
+        border-bottom: 2px solid #808080;
+        border-left: 2px solid #808080;
+        text-indent: -99999px;
+        &.slick-prev {
+            left: 7px;
+            transform: rotate(45deg);
+        }
+        &.slick-next {
+            right: 7px;
+            transform: rotate(-135deg);
+        }
+    }
+}

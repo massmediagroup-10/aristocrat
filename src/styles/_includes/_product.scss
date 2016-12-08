@@ -1,0 +1,88 @@
+.product {
+    &-list {
+        * {
+            outline: none;
+        }
+    }
+    &-item {
+        margin-bottom: 75px;
+        position: relative;
+        &-image {
+            margin-bottom: 20px;
+            height: 220px;
+            img {
+                margin: 0 auto;
+            }
+        }
+        &-description {
+            h5 {
+                font-family: $times;
+                text-transform: uppercase;
+                margin-bottom: 6px
+            }
+            p {
+                margin-bottom: 7px;
+                &.secondary {
+                    font-size: 80%;
+                    line-height: 7px;
+                    margin-bottom: 13px;
+                }
+            }
+            a {
+                color: $body-font-color;
+            }
+            .detail {
+                font-size: $size-h5;
+                text-transform: uppercase;
+                margin-top: 21px;
+                display: block;
+                .fa {
+                    margin-left: 8px;
+                    left: 0;
+                    transition: 300ms all ease;
+                    position: relative;
+                }
+                &:hover {
+                    .fa {
+                        left: 4px;
+                    }
+                }
+            }
+        }
+        h5 {
+            font-size: 16px;
+            &.secondary {
+                font-size: 14px;
+            }
+        }
+    }
+    &-rate {
+        .fa {
+            color: #808080;
+            font-size: 18px;
+            transition: 300ms all ease;
+            @extend .fa-star-o;
+        }
+        &.active {
+            .fa {
+                @extend .fa-star;
+                color: #ecc3b2;
+            }
+        }
+    }
+    &-thumbnail {
+        float: left;
+    }
+    &-summary {
+        margin-left: 110px;
+        margin-bottom: 1rem;
+        .product-item {
+            h5 {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.trending {
+}

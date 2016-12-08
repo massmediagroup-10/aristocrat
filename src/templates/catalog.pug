@@ -1,0 +1,55 @@
+doctype html
+html
+    include _includes/_head.pug
+    body.starterkit.innerpage
+        .header-line
+        header.header
+            include _includes/_header.pug
+            .breadcrumbs
+                ul
+                    li
+                        a(href='/') Home
+                    li
+                        a(href='#') Royal Boutique
+                    li
+                        span Aristocrat Kids
+        main.content
+            .collection
+                .row.column
+                    .collection-item.innerfull
+                        .row
+                            .collection-item-description.large-5.large-offset-1.column
+                                h4 Spring/Summer 2017 Royal Candy
+                                p Aristocrat Kids is a kids fashion brand that holds high quality above everything else. Each item is 100% hand made. In our collections we work with such materials as silk, wool, cashmere, cotton, linen and others. We love bringing attention to little details, we know that it’s teh small things that make big diference in life.
+                                a.button Discover
+                            .collection-item-image.large-6.column
+                                img(src='files/img/collection-1.jpg')
+
+            include _includes/_catalog_head.pug
+            .row
+                aside.large-2.column
+                    include _includes/_filter.pug
+                section.catalog-body.large-9.large-offset-1.column
+                    .row
+                        include _includes/_product4.pug
+                        include _includes/_product5.pug
+                        include _includes/_product3.pug
+                        include _includes/_product3.pug
+                        include _includes/_product3.pug
+                        include _includes/_product3.pug
+            include _includes/_catalog_head_bottom.pug
+            h2.subheader YOU MIGHT LIKE
+            .product-list.row
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+
+        footer.footer
+            include _includes/_footer.pug
+
+    script(src="js/jquery.min.js")
+    script(src="js/script.js")
+    script(src="js/slick.min.js")

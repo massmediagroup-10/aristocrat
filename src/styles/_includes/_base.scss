@@ -1,0 +1,262 @@
+html, body {
+    height: auto;
+}
+
+main.content {
+    position: relative;
+    background: #fff;
+    z-index: 2;
+    margin-top: 619px;
+    padding-top: 30px;
+}
+
+ul {
+    ul {
+        margin: 0;
+    }
+    li {
+        list-style: none;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $times;
+}
+
+.subheader {
+    font-family: $roboto;
+    text-transform: uppercase;
+    margin-bottom: 67px;
+    text-align: center;
+}
+
+.thirdheader {
+    font-size: 18px;
+    font-family: $roboto;
+    font-weight: 300;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h4 {
+    &.uppercase {
+        font-weight: normal;
+        text-transform: uppercase;
+        color: $primary-color;
+    }
+}
+
+h5 {
+    font-weight: normal;
+}
+
+.button {
+    text-transform: uppercase;
+    min-width: 200px;
+    padding-left: 17px;
+    padding-right: 17px;
+    &:hover {
+        color: #3c3c3c;
+    }
+    &.secondary {
+        color: #fff;
+        &:hover {
+            background: #c9c9c9;
+            color: #666;
+        }
+    }
+    &.primary {
+        background: #bf9e8f;
+        color: #fff;
+        &:hover {
+            background: #967f74;
+            color: #fff;
+        }
+    }
+    .fa {
+        padding-right: 10px;
+    }
+    &.large {
+        line-height: 2.3rem;
+    }
+    &.accented {
+        background: #bf9e8f;
+        color: #fff;
+        &:hover {
+            background: #9b8175;
+        }
+    }
+    &.outline {
+        background: #fff;
+        border: 1px solid #d7d7d7;
+        color: #000;
+        &:hover {
+            background: #d7d7d7;
+        }
+    }
+    &.expand {
+        width: 100%;
+    }
+    &-link {
+        background: transparent;
+        text-transform: uppercase;
+        text-decoration: underline;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        color: $light-gray;
+        line-height: 30px;
+        &:hover {
+            text-decoration: none;
+            color: $dark-gray;
+        }
+    }
+}
+
+.input-group {
+    input {
+        margin-bottom: 0;
+        font-size: rem-calc(12);
+        padding-left: 12px;
+    }
+}
+
+.product-label {
+    display: inline-block;
+    min-width: 80px;
+    padding: 0 4px;
+    line-height: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    &.warning {
+        background: $warning-color;
+        color: #fff;
+    }
+    &.success {
+        background: $success-color;
+        color: $secondary-color;
+    }
+}
+
+select {
+    border-width: 1px;
+    border-color: rgb(239, 239, 239);
+    background-size: 24px 6px;
+    font-size: 12px;
+    max-width: 200px;
+    height: 40px;
+    padding-left: 11px;
+    color: $primary-color;
+}
+
+&.warning {
+    color: $warning-color;
+}
+
+a {
+    .fa {
+        margin-right: 6px;
+    }
+}
+
+.icon-star {
+    &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        background-image: url(../files/img/icon-stars.png);
+    }
+    &.white:before {
+        background-position: left top;
+        width: 22px;
+        height: 27px;
+    }
+    &.gold:before {
+        background-position: right -4px;
+        width: 20px;
+        height: 23px;
+    }
+}
+
+.icon-top {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: rotate(-135deg);
+}
+
+.innerpage {
+    .navigation {
+        border-bottom: 0;
+    }
+    .content {
+        padding-top: 0;
+        margin-top: 232px;
+    }
+}
+
+.breadcrumbs {
+    background: #e6e6e6;
+    text-align: center;
+    ul {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    li {
+        text-transform: none;
+        line-height: 22px;
+        &:not(:last-child) {
+            &:after,
+            &::after {
+                content: '>';
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.ctext {
+    p {
+        margin-bottom: 8px;
+        line-height: 21px;
+        letter-spacing: 0.23px;
+    }
+}
+
+.pagination {
+    span {
+        color: $pagination-item-color;
+        display: block;
+        padding: $pagination-item-padding;
+        border-radius: $global-radius;
+        cursor: default;
+    }
+    .fa {
+        font-size: 17px;
+        color: $medium-gray;
+    }
+    .arrow {
+        margin: 0 15px;
+        &:not(.unavailable) {
+            &:hover {
+                .fa {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}

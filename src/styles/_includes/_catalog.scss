@@ -43,10 +43,15 @@
     }
     &-body {
         padding-top: 34px;
-        .product-label {
+        .product-labels {
             position: absolute;
             left: $list-nested-side-margin;
             top: 0;
+            width: 80px;
+        }
+        .product-label {
+            margin-bottom: 2px;
+            width: 100%;
         }
         .product-rate {
             position: absolute;

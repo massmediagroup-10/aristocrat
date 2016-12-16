@@ -56,6 +56,55 @@
         }
     }
 
+    &-color {
+        h6 {
+            margin-bottom: 8px;
+        }
+        &-row {
+            @extend %clear;
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+        &-item {
+            display: flex;
+            align-items: center;
+            color: $primary-color;
+            border-width: 1px;
+            border-color: #bababa;
+            border-style: solid;
+            width: 58px;
+            height: 58px;
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            position: relative;
+            &:before {
+                content: "\f00c";
+                display: inline-block;
+                font: normal normal normal 13px/1 FontAwesome;
+                color: #bf9e8f;
+                position: absolute;
+                top: 8px;
+                left: 2px;
+                opacity: 0;
+                transition: 350ms all ease;
+            }
+            &:hover {
+                border-color: #bf9e8f;
+            }
+            &.active {
+                border-color: #bf9e8f;
+                &:before {
+                    top: 2px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
     &-size {
         margin-bottom: 5px;
         select {

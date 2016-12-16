@@ -159,7 +159,6 @@ function tabs(block) {
             $('[data-tabId]', $wrap).click(function(event) {
                 event.preventDefault();
                 var tabid = $(this).data('tabid');
-                console.log(tabid);
                 $('[data-tabId]', $wrap).removeClass('active');
                 $('[data-tabId="' + tabid + '"]', $wrap).addClass('active');
                 $('[data-tab]', $wrap).removeClass('active').addClass('hidden');
@@ -209,6 +208,23 @@ function checkoutItem() {
     });
 }
 
+function detailSizeChange() {
+    $(document).on('change', '.detail-size select', function() {
+        var select = $(this).val();
+        console.log(select);
+        $('.detail-color-row').removeClass('active');
+        $('.detail-color-row[data-size="' + select + '"]').addClass('active');
+    })
+}
+
+function detailColorSelect() {
+    $(document).on('click', '.detail-color-item', function() {
+        var $row = $(this).closest('.detail-color-row');
+        $('.detail-color-item', $row).removeClass('active');
+        $(this).addClass('active');
+    });
+}
+
 $(document).ready(function() {
 
     $(document).foundation();
@@ -221,6 +237,8 @@ $(document).ready(function() {
     productRate();
     fixedResponsive();
     checkoutItem();
+    detailSizeChange();
+    detailColorSelect();
 
     $('form').each(function() {
         $(this).validate();

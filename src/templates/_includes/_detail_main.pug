@@ -6,11 +6,28 @@
         span.old $637.92
     .detail-size
         select
-            option Select Size
-            option S
-            option M
-            option L
+            option(value='S') Select Size
+            option(value='S') S
+            option(value='M') M
+            option(value='L') L
         a(href='#') Size Guide
+    .detail-color
+        h6 Available colours:
+        .detail-color-row.active(data-size="S")
+            .detail-color-item.active(data-color="1")
+                img(src="files/img/color-item.png")
+            .detail-color-item(data-color="2")
+                img(src="files/img/color-item.png")
+            .detail-color-item(data-color="3")
+                img(src="files/img/color-item.png")
+        .detail-color-row(data-size="M")
+            .detail-color-item.active(data-color="4")
+                img(src="files/img/color-item.png")
+            .detail-color-item(data-color="5")
+                img(src="files/img/color-item.png")
+        .detail-color-row(data-size="L")
+            .detail-color-item.active(data-color="6")
+                img(src="files/img/color-item.png")
     .detail-actions
         a.button.large.accented(href='#')
             i.fa.fa-shopping-bag

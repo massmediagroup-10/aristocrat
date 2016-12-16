@@ -120,6 +120,10 @@ h5 {
             color: $dark-gray;
         }
     }
+    &.block {
+        display: block;
+        width: 100%;
+    }
 }
 
 .input-group {
@@ -257,6 +261,40 @@ a {
                     color: $primary-color;
                 }
             }
+        }
+    }
+}
+
+.reveal {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    h2, p {
+        color: #4c4c4c;
+        text-align: center;
+    }
+    h2 {
+        font-size: 26px;
+        font-weight: normal;
+        margin-bottom: 18px;
+    }
+    p {
+        font-size: 14px;
+        font-family: $times;
+        margin-bottom: 10px;
+    }
+    .button {
+        margin-bottom: 15px;
+        min-width: auto;
+        @media #{$medium-up} {
+            margin-bottom: 0;
+        }
+    }
+    .reveal-actions {
+        margin-top: 47px;
+    }
+    &.xsmall {
+        @media #{$medium-up} {
+            width: 360px;
         }
     }
 }

@@ -136,9 +136,14 @@ gulp.task('fonts', function () {
 
 gulp.task('scripts', function() {
     return gulp.src([
-            routes.scripts.js,
             'node_modules/foundation-sites/js/foundation.core.js',
-            'node_modules/jquery-validation/dist/jquery.validate.min.js'
+            'node_modules/foundation-sites/js/foundation.util.mediaQuery.js',
+            'node_modules/foundation-sites/js/foundation.util.keyboard.js',
+            'node_modules/foundation-sites/js/foundation.util.box.js',
+            'node_modules/foundation-sites/js/foundation.util.triggers.js',
+            'node_modules/foundation-sites/js/foundation.reveal.js',
+            'node_modules/jquery-validation/dist/jquery.validate.min.js',
+            routes.scripts.js
         ])
         .pipe(plumber({
             errorHandler: notify.onError({
@@ -146,11 +151,11 @@ gulp.task('scripts', function() {
                 message:"<%= error.message %>"
             })
         }))
-        .pipe(sourcemaps.init())
-            .pipe(concat('script.js'))
+       // .pipe(sourcemaps.init())
+        .pipe(concat('script.js'))
             //.pipe(babel())
             //.pipe(uglify())
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .pipe(gulp.dest(routes.scripts.jsmin))
         .pipe(browserSync.stream())
         .pipe(notify({

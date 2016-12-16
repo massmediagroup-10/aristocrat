@@ -1,0 +1,33 @@
+doctype html
+html
+    include _includes/_head.pug
+    body.starterkit.innerpage
+        .header-line
+        header.header
+            include _includes/_header.pug
+            .breadcrumbs
+                ul
+                    li
+                        a(href='/') Home
+                    li
+                        span Confirm order
+        main.content
+            .confirm.row.column.text-center
+                h3 Confirm order
+                p Order №2354327 admitted to treatment. Thank you for purchase.
+                a.button.accented.large continue shopping
+            h2.subheader YOU MIGHT LIKE
+            .product-list.row
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+                include _includes/_product2.pug
+
+        footer.footer
+            include _includes/_footer.pug
+
+    script(src="js/jquery.min.js")
+    script(src="js/script.js")
+    script(src="js/slick.min.js")

@@ -97,16 +97,17 @@ gulp.task('styles', function() {
                 message:"<%= error.message %>"
             })
         }))
-        .pipe(sourcemaps.init())
-            .pipe(sass({
-                includePaths: [
-                    'node_modules/foundation-sites/scss',
-                    'node_modules/font-awesome/scss'
-                ],
-                outputStyle: 'compressed'
-            }))
-            .pipe(autoprefixer('last 3 versions'))
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.init())
+        .pipe(sass({
+            includePaths: [
+                'node_modules/foundation-sites/scss',
+                'node_modules/font-awesome/scss',
+                'node_modules/motion-ui/motion-ui.scss'
+            ],
+            outputStyle: 'compressed'
+        }))
+        .pipe(autoprefixer('last 3 versions'))
+        //.pipe(sourcemaps.write())
         .pipe(cssimport({}))
         .pipe(rename('style.css'))
         .pipe(gulp.dest(routes.styles.css))
@@ -142,6 +143,7 @@ gulp.task('scripts', function() {
             'node_modules/foundation-sites/js/foundation.util.box.js',
             'node_modules/foundation-sites/js/foundation.util.triggers.js',
             'node_modules/foundation-sites/js/foundation.reveal.js',
+            'node_modules/foundation-sites/js/foundation.util.motion.js',
             'node_modules/jquery-validation/dist/jquery.validate.min.js',
             routes.scripts.js
         ])

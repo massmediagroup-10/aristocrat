@@ -1984,7 +1984,6 @@ function initSubmenu() {
 
         var that = $(this);
         var documentTop = $(document).scrollTop();
-
         if (that.siblings('.submenu').hasClass('active')) {
             $('.navigation li.has-submenu>a').removeClass('active');
             $('.submenu').stop().slideUp(function() {
@@ -2005,21 +2004,34 @@ function initSubmenu() {
                 that.addClass('active');
                 that.siblings('.submenu').addClass('active');
             });
+            /*
+                if document position on top of body
+             */
             if (documentTop == 0) {
                 $('.content').stop().animate({
                     'margin-top': contentTop
                 });
-                $('.preview').stop().animate({
-                    'top': previewTop
-                }, function() {
-                    that.siblings('.submenu').stop().slideDown();
+                /*
+                    if page has preview block
+                */
+                if ($('.preview').length > 0) {
                     $('.preview').stop().animate({
-                        'top': previewTop + submenuHeight
+                        'top': previewTop
+                    }, function() {
+                        that.siblings('.submenu').stop().slideDown();
+                        $('.preview').stop().animate({
+                            'top': previewTop + submenuHeight
+                        });
+                        $('.content').stop().animate({
+                            'margin-top': contentTop + submenuHeight
+                        });
                     });
+                } else {
+                    that.siblings('.submenu').stop().slideDown();
                     $('.content').stop().animate({
                         'margin-top': contentTop + submenuHeight
                     });
-                });
+                }
             } else {
                 that.siblings('.submenu').stop().slideDown();
             }

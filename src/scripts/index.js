@@ -102,12 +102,22 @@ function fixedResponsive() {
     var previewHeight = ($('.preview').length > 0) ? $('.preview').outerHeight() : 0;
     var submenuHeight = ($('.submenu.active').length > 0) ? $('.submenu.active').outerHeight() : 0;
     var headerHeight = $('.header').outerHeight();
-    $('.content').css({
-        'margin-top': headerHeight + previewHeight + submenuHeight
-    });
-    $('.navigation ul.submenu').css({
-        'top': headerHeight
-    });
+    var documentTop = $(document).scrollTop();
+    if (documentTop == 0) {
+        $('.content').css({
+            'margin-top': headerHeight + previewHeight + submenuHeight
+        });
+        $('.navigation .submenu').css({
+            'top': headerHeight
+        });
+    } else {
+        $('.content').css({
+            'margin-top': headerHeight + previewHeight
+        });
+        $('.navigation .submenu').css({
+            'top': headerHeight
+        });
+    }
     // }
 }
 
@@ -125,27 +135,48 @@ function initSubmenu() {
     $('.navigation li.has-submenu .submenu').stop().slideUp();
 
     $('.navigation li.has-submenu>a').click(function() {
-        if ($(this).find('.submenu').hasClass('active')) {
-            var that = $(this);
-            that.find('.submenu').stop().slideUp(function() {
-                that.find('.submenu').stop().removeClass('active');
-            });
-            $('.content').stop().animate({
-                'margin-top': contentTop + 0
-            });
-            $('.preview').stop().animate({
-                'top': previewTop + 0
-            });
-        } else {
-            $(this).find('.submenu').stop().addClass('active');
-            $(this).find('.submenu').stop().slideDown();
-            $('.preview').stop().animate({
-                'top': previewTop + submenuHeight
-            });
-            $('.content').stop().animate({
-                'margin-top': contentTop + submenuHeight
-            });
 
+        var that = $(this);
+        var documentTop = $(document).scrollTop();
+
+        if (that.siblings('.submenu').hasClass('active')) {
+            $('.navigation li.has-submenu>a').removeClass('active');
+            $('.submenu').stop().slideUp(function() {
+                $('.submenu').removeClass('active');
+            });
+            if (documentTop == 0) {
+                $('.content').stop().animate({
+                    'margin-top': contentTop
+                });
+                $('.preview').stop().animate({
+                    'top': previewTop
+                });
+            }
+        } else {
+            $('.navigation li.has-submenu>a').removeClass('active');
+            $('.submenu').stop().slideUp(function() {
+                $('.submenu').removeClass('active');
+                that.addClass('active');
+                that.siblings('.submenu').addClass('active');
+            });
+            if (documentTop == 0) {
+                $('.content').stop().animate({
+                    'margin-top': contentTop
+                });
+                $('.preview').stop().animate({
+                    'top': previewTop
+                }, function() {
+                    that.siblings('.submenu').stop().slideDown();
+                    $('.preview').stop().animate({
+                        'top': previewTop + submenuHeight
+                    });
+                    $('.content').stop().animate({
+                        'margin-top': contentTop + submenuHeight
+                    });
+                });
+            } else {
+                that.siblings('.submenu').stop().slideDown();
+            }
         }
     });
 }
@@ -211,7 +242,6 @@ function checkoutItem() {
 function detailSizeChange() {
     $(document).on('change', '.detail-size select', function() {
         var select = $(this).val();
-        console.log(select);
         $('.detail-color-row').removeClass('active');
         $('.detail-color-row[data-size="' + select + '"]').addClass('active');
     })
@@ -222,6 +252,13 @@ function detailColorSelect() {
         var $row = $(this).closest('.detail-color-row');
         $('.detail-color-item', $row).removeClass('active');
         $(this).addClass('active');
+    });
+}
+
+function isotopeInit() {
+    $('.submenu').isotope({
+        itemSelector: '.submenu-item',
+        layoutMode: 'fitRows'
     });
 }
 

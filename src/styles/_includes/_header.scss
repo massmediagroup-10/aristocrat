@@ -107,7 +107,7 @@
                     content: '';
                 }
             }
-            a {
+            & > a {
                 font-family: $times;
                 color: $primary-color;
                 text-transform: uppercase;
@@ -116,35 +116,58 @@
                     content: '';
                     position: absolute;
                     background: $primary-color;
-                    transition: 300ms all ease;
+                    transition: 300ms all  ease;
                     height: 2px;
                     left: 50%;
                     right: 100%;
                     bottom: 0;
                 }
-                &:hover {
+                &:hover{
                     &:after {
                         left: 10px;
                         right: 10px;
                     }
                 }
+                &.active{
+                    &:after {
+                        transition: 300ms height  ease;
+                        content: "\f0d8";
+                        font: normal normal normal 16px/1 FontAwesome;
+                        background: transparent;
+                        left: 0;
+                        right: 0;
+                        height: auto;
+                        bottom: -4px;
+                    }
+                    & + .submenu {
+                        opacity: 1;
+                    }
+                }
+
             }
-            ul.submenu {
-                position: fixed;
+            .submenu {
+                position: fixed !important;
                 left: 0;
                 right: 0;
                 top: 179px;
                 z-index: 3;
                 opacity: 0;
                 transition: 0ms all ease;
+                margin: 0px auto;
+                height: 416px;
+                background: #fff;
                 &.active {
                     opacity: 1;
                 }
-                li {
-                    float: left;
+                &-item {
+                    margin-bottom: 4px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    /*float: left;
                     position: relative;
                     &:after {
                         content: '';
@@ -158,7 +181,7 @@
                     img{
                         width: 100%;
                         margin: 0;
-                    }
+                    }*/
                     p {
                         position: absolute;
                         font-size: 32px;
@@ -170,6 +193,16 @@
                         max-width: 290px;
                         z-index: 3;
                     }
+                }
+                img {
+                    margin: 0;
+                    width: 100%;
+                }
+                .row {
+                    margin: 0 auto;
+                }
+                .column {
+                    padding: 0 2px;
                 }
             }
         }

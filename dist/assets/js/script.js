@@ -2108,6 +2108,17 @@ function isotopeInit() {
     });
 }
 
+function switcherInit() {
+    $(document).on('click', '.switcher', function(e) {
+        e.preventDefault();
+        var switcher = $(this);
+        switcher.toggleClass('active');
+        setTimeout(function() {
+            switcher.toggleClass('active');
+        }, 2000);
+    });
+}
+
 $(document).ready(function() {
 
     $(document).foundation();
@@ -2122,6 +2133,7 @@ $(document).ready(function() {
     checkoutItem();
     detailSizeChange();
     detailColorSelect();
+    switcherInit();
 
     $('form').each(function() {
         $(this).validate();

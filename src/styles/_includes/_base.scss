@@ -91,7 +91,8 @@ h5 {
     &.accented {
         background: #bf9e8f;
         color: #fff;
-        &:hover {
+        &:hover,
+        &.active {
             background: #9b8175;
         }
     }
@@ -123,6 +124,34 @@ h5 {
     &.block {
         display: block;
         width: 100%;
+    }
+    &.switcher {
+        .switcher-text {
+            position: relative;
+            line-height: 20px;
+        }
+        &.active {
+            cursor: default;
+            .current {
+                opacity: 0;
+            }
+            .hidden {
+                top: 0;
+                opacity: 1;
+                font-size: 12px;
+            }
+        }
+        .current {
+            transition: 350ms all ease;
+            position: relative;
+        }
+        .hidden {
+            opacity: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transition: 300ms top ease;
+        }
     }
 }
 

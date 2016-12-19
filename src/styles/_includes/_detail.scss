@@ -125,6 +125,15 @@
             &:not(:last-child) {
                 margin-right:16px;
             }
+            &.large {
+                font-size: 1.2em;
+                .fa {
+                    margin-right: 0;
+                }
+            }
+            .switcher-text {
+                min-width: 164px;
+            }
         }
     }
 

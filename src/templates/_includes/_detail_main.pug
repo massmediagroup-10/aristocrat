@@ -29,9 +29,11 @@
             .detail-color-item.active(data-color="6")
                 img(src="files/img/color-item.png")
     .detail-actions
-        a.button.large.accented(href='#')
+        a.button.large.accented.switcher(href='#')
             i.fa.fa-shopping-bag
-            | ADD TO SHOPPING BAG
+            span.switcher-text
+                span.current ADD TO SHOPPING BAG
+                span.hidden Added  TO SHOPPING BAG
         a.button.large.outline(href='#')
             .fa.fa-star
             | ADD TO WISHLIST

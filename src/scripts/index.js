@@ -75,7 +75,10 @@ function initSlider() {
         dots: false,
         infinite: true,
         speed: 1000,
-        fade: true
+        fade: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: true
     });
 }
 

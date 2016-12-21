@@ -182,7 +182,7 @@ function initSubmenu() {
                     });
                 } else {
                     $('.content').stop().animate({
-                        'margin-top': $('.breadcrumbs').offset().top
+                        'margin-top': $('.breadcrumbs').offset().top + $('.breadcrumbs').height()
                     }, 500, function() {
                         $('.content').stop().animate({
                             'margin-top': contentTop + submenuHeight

@@ -100,7 +100,6 @@
     .menu {
         display: table;
         width: 100%;
-        position: relative;
     }
     li {
         text-align: center;
@@ -152,7 +151,7 @@
             position: absolute !important;
             left: 0;
             right: 0;
-            top: calc(100% + 4px);
+            top: calc(100%);
             z-index: 3;
             opacity: 0;
             transition: 0ms all ease;

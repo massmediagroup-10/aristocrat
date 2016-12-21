@@ -6,9 +6,10 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 3;
+    z-index: 2;
     &.fixed {
         padding-top: 5px;
+        z-index: 5 !important;
         .header-main {
             margin-bottom: 5px;
         }
@@ -99,111 +100,112 @@
     .menu {
         display: table;
         width: 100%;
-        li {
-            text-align: center;
+        position: relative;
+    }
+    li {
+        text-align: center;
 
-            &.has-submenu {
+        &.has-submenu {
+            &:after {
+                content: '';
+            }
+        }
+        & > a {
+            font-family: $times;
+            color: $primary-color;
+            text-transform: uppercase;
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                background: $primary-color;
+                transition: 300ms all  ease;
+                height: 2px;
+                left: 50%;
+                right: 100%;
+                bottom: 0;
+            }
+            &:hover{
                 &:after {
-                    content: '';
+                    left: 10px;
+                    right: 10px;
                 }
             }
-            & > a {
-                font-family: $times;
-                color: $primary-color;
-                text-transform: uppercase;
+            &.active{
+                &:after {
+                    transition: 300ms height  ease;
+                    content: "\f0d8";
+                    font: normal normal normal 16px/1 FontAwesome;
+                    background: transparent;
+                    left: 0;
+                    right: 0;
+                    height: auto;
+                    bottom: -4px;
+                }
+                & + .submenu {
+                    opacity: 1;
+                }
+            }
+
+        }
+        .submenu {
+            position: absolute !important;
+            left: 0;
+            right: 0;
+            top: calc(100% + 4px);
+            z-index: 3;
+            opacity: 0;
+            transition: 0ms all ease;
+            margin: 0px auto;
+            height: 410px;
+            background: #fff;
+            &.active {
+                opacity: 1;
+            }
+            &-item {
+                //margin-bottom: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:last-child {
+                    //margin-bottom: 0;
+                }
+                /*float: left;
                 position: relative;
                 &:after {
                     content: '';
-                    position: absolute;
-                    background: $primary-color;
-                    transition: 300ms all  ease;
-                    height: 2px;
-                    left: 50%;
-                    right: 100%;
-                    bottom: 0;
+                    @extend %full;
+                    background: rgba(0,0,0,0);
+                    transition: 500ms all ease-out;
                 }
-                &:hover{
-                    &:after {
-                        left: 10px;
-                        right: 10px;
-                    }
+                &:hover:after {
+                    background: rgba(0,0,0,0.3);
                 }
-                &.active{
-                    &:after {
-                        transition: 300ms height  ease;
-                        content: "\f0d8";
-                        font: normal normal normal 16px/1 FontAwesome;
-                        background: transparent;
-                        left: 0;
-                        right: 0;
-                        height: auto;
-                        bottom: -4px;
-                    }
-                    & + .submenu {
-                        opacity: 1;
-                    }
-                }
-
-            }
-            .submenu {
-                position: fixed !important;
-                left: 0;
-                right: 0;
-                top: 179px;
-                z-index: 3;
-                opacity: 0;
-                transition: 0ms all ease;
-                margin: 0px auto;
-                height: 416px;
-                background: #fff;
-                &.active {
-                    opacity: 1;
-                }
-                &-item {
-                    margin-bottom: 4px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
-                    /*float: left;
-                    position: relative;
-                    &:after {
-                        content: '';
-                        @extend %full;
-                        background: rgba(0,0,0,0);
-                        transition: 500ms all ease-out;
-                    }
-                    &:hover:after {
-                        background: rgba(0,0,0,0.3);
-                    }
-                    img{
-                        width: 100%;
-                        margin: 0;
-                    }*/
-                    p {
-                        position: absolute;
-                        font-size: 32px;
-                        font-family: $roboto;
-                        color: #fff;
-                        text-transform: uppercase;
-                        line-height: 1.25;
-                        text-shadow: 0px 1px 1.98px rgba(0, 0, 0, 0.35);
-                        max-width: 290px;
-                        z-index: 3;
-                    }
-                }
-                img {
-                    margin: 0;
+                img{
                     width: 100%;
+                    margin: 0;
+                }*/
+                p {
+                    position: absolute;
+                    font-size: 32px;
+                    font-family: $roboto;
+                    color: #fff;
+                    text-transform: uppercase;
+                    line-height: 1.25;
+                    text-shadow: 0px 1px 1.98px rgba(0, 0, 0, 0.35);
+                    max-width: 290px;
+                    z-index: 3;
                 }
-                .row {
-                    margin: 0 auto;
-                }
-                .column {
-                    padding: 0 2px;
-                }
+            }
+            img {
+                margin: 0;
+                width: 100%;
+            }
+            .row {
+                margin: 0 auto;
+            }
+            .column {
+                padding: 0 2px;
             }
         }
     }

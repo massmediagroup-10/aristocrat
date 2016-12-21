@@ -145,7 +145,7 @@ gulp.task('scripts', function() {
             'node_modules/foundation-sites/js/foundation.reveal.js',
             'node_modules/foundation-sites/js/foundation.util.motion.js',
             'node_modules/jquery-validation/dist/jquery.validate.min.js',
-            'node_modules/isotope-layout/dist/isotope.pkgd.min.js',
+            'node_modules/packery/dist/packery.pkgd.min.js',
             routes.scripts.js
         ])
         .pipe(plumber({

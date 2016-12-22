@@ -1984,8 +1984,6 @@ function initSubmenu() {
         var that = $(this);
         var documentTop = $(document).scrollTop();
 
-        //packeryInit(that.siblings('.submenu'));
-
         openedOnEither = (documentTop != 0) ? true : false;
 
         if (that.siblings('.submenu').hasClass('active')) {

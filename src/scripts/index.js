@@ -106,7 +106,11 @@ function fixedResponsive() {
     var submenuHeight = ($('.submenu.active').length > 0) ? $('.submenu.active').outerHeight() : 0;
     var headerHeight = $('.header').outerHeight();
     var documentTop = $(document).scrollTop();
+    console.log(openedOnEither);
     if ($('.submenu').hasClass('active')) {
+        if (openedOnEither) {
+            submenuHeight = 0;
+        }
         $('.content').css({
             'margin-top': headerHeight + previewHeight + submenuHeight
         });
@@ -133,23 +137,24 @@ function initSubmenu() {
         var that = $(this);
         var documentTop = $(document).scrollTop();
 
-        packeryInit(that.siblings('.submenu'));
+        //packeryInit(that.siblings('.submenu'));
+
+        openedOnEither = (documentTop != 0) ? true : false;
 
         if (that.siblings('.submenu').hasClass('active')) {
-            if (documentTop == 0) {
-                $('.content').stop().animate({
-                    'margin-top': contentTop
-                }, 500);
-                if ($('.preview').length > 0) {
-                    $('.preview').stop().animate({
-                        'top': previewTop
-                    }, 500);
-                }
-                setTimeout(function() {
-                    $('.navigation li.has-submenu>a').removeClass('active');
-                    $('.submenu').removeClass('active');
+            $('.header').css('z-index', '2');
+            $('.content').stop().animate({
+                'margin-top': contentTop
+            }, 500);
+            if ($('.preview').length > 0) {
+                $('.preview').stop().animate({
+                    'top': previewTop
                 }, 500);
             }
+            setTimeout(function() {
+                $('.navigation li.has-submenu>a').removeClass('active');
+                $('.submenu').removeClass('active');
+            }, 500);
         } else {
             /*
              if document position on top of body
@@ -162,12 +167,16 @@ function initSubmenu() {
                  if page has preview block
                  */
                 if ($('.preview').length > 0) {
+                    $('.header').css('z-index', '2');
                     $('.preview').stop().animate({
                         'top': previewTop
                     }, function() {
+                        if (openedOnEither) submenuHeight = -submenuHeight;
                         $('.preview').stop().animate({
                             'top': previewTop + submenuHeight
-                        }, 500);
+                        }, 500, function() {
+                            $('.header').css('z-index', '5');
+                        });
                         $('.content').stop().animate({
                             'margin-top': contentTop + submenuHeight
                         }, 500);
@@ -197,6 +206,13 @@ function initSubmenu() {
                         }, 0);
                     });
                 }
+            } else {
+                $('.navigation li.has-submenu>a').removeClass('active');
+                $('.submenu').removeClass('active');
+                setTimeout(function() {
+                    that.addClass('active');
+                    that.siblings('.submenu').addClass('active');
+                }, 0);
             }
         }
     });
@@ -279,7 +295,7 @@ function detailColorSelect() {
 function packeryInit(submenu) {
     submenu.packery({
         "itemSelector": ".submenu-item",
-        gutter: 4,
+        gutter: '.gutter-sizer',
         "isHorizontal": true
     });
 }
@@ -294,6 +310,22 @@ function switcherInit() {
         }, 2000);
     });
 }
+
+function footerplaceholder() {
+    $('.footer_placeholder')
+        .height($('.footer')
+            .outerHeight());
+}
+
+function contentHeight() {
+    var minHeight = $(window).height() - ($('.header').outerHeight() + $('.footer').outerHeight());
+    $('.content').css({
+        'min-height': minHeight
+    })
+}
+
+
+var openedOnEither = false;
 
 $(document).ready(function() {
 
@@ -310,6 +342,7 @@ $(document).ready(function() {
     detailColorSelect();
     switcherInit();
     initSubmenu();
+    contentHeight();
 
     $('form').each(function() {
         $(this).validate();
@@ -321,6 +354,6 @@ $(document).ready(function() {
         scrollHandler(initHeaderHeight);
     });
     $(window).on('resize', function() {
-        fixedResponsive()
+        fixedResponsive();
     });
 });

@@ -6,7 +6,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 5;
     &.fixed {
         padding-top: 5px;
         z-index: 5 !important;
@@ -152,22 +152,27 @@
             left: 0;
             right: 0;
             top: calc(100%);
-            z-index: 3;
             opacity: 0;
             transition: 0ms all ease;
             margin: 0px auto;
-            height: 410px;
+            //height: 410px;
             background: #fff;
+            z-index: -1;
+            padding-bottom: 4px;
             &.active {
                 opacity: 1;
+                z-index: 3;
+            }
+            .large-6 {
             }
             &-item {
-                //margin-bottom: 4px;
+                margin-bottom: 4px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                height: 100%;
                 &:last-child {
-                    //margin-bottom: 0;
+                    margin-bottom: 0;
                 }
                 /*float: left;
                 position: relative;
@@ -198,10 +203,12 @@
             }
             img {
                 margin: 0;
+                //padding: 0px 2px;
                 width: 100%;
+                height: 100%;
             }
             .row {
-                margin: 0 auto;
+                margin: 0 -2px;
             }
             .column {
                 padding: 0 2px;

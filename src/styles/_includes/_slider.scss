@@ -14,21 +14,26 @@
     img {
         width: 100%;
     }
-    .collection-item-description {
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.4);
+}
+
+.slider-description {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding-left: rem-calc(50);
+    h3 {
         color: #fff;
-        padding-left: rem-calc(50);
-        p {
-            line-height: 21px;
-            letter-spacing: 0.25px;
-        }
-        .vertical-box {
-            height: 100%;
-        }
+    }
+    p {
+        line-height: 21px;
+        letter-spacing: 0.25px;
+        margin-bottom: 24px;
+    }
+    .vertical-box {
+        height: 100%;
     }
 }
 

@@ -23,6 +23,8 @@
         margin-bottom: 18px;
         display: flex;
         flex-wrap: wrap;
+        position: relative;
+        z-index: 22;
         & > .column {
             display: flex;
         }
@@ -97,6 +99,8 @@
 .navigation {
     background: $activeColor;
     border-bottom: 4px solid #fff;
+    position: relative;
+    z-index: 1;
     .menu {
         display: table;
         width: 100%;
@@ -158,7 +162,6 @@
             background: #fff;
             z-index: -1;
             padding-bottom: 4px;
-            transform: translateY(-100%);
             &.active {
                 opacity: 1;
                 z-index: 3;

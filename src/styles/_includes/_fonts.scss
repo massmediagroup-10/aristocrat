@@ -1,1 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,400,700');
+
+@mixin font($fontName, $fontFamily, $fw:normal, $fs:normal ){
+    @font-face {
+        font-family: '#{$fontFamily}';
+        src: url('../fonts/#{$fontName}.eot');
+        src: local('O'),
+        url('../fonts/#{$fontName}.woff') format('woff'),
+        url('../fonts/#{$fontName}.ttf') format('truetype'),
+        url('../fonts/#{$fontName}.svg') format('svg');
+        font-weight: $fw;
+        font-style: $fs;
+    }
+}
+
+@include font('LibreBaskerville-Regular', 'Baskerville', normal, normal);
+@include font('Isabella', 'Isabella', normal, normal);

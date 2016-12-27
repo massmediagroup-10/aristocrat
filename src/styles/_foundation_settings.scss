@@ -63,7 +63,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Roboto', sans-serif;
+$body-font-family: 'Baskerville', sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -111,7 +111,7 @@ $header-sizes: (
     small: (
         'h1': 24,
         'h2': 30,
-        'h3': 19,
+        'h3': 30,
         'h4': 16,
         'h5': 14,
         'h6': 12,
@@ -119,7 +119,7 @@ $header-sizes: (
     medium: (
         'h1': 48,
         'h2': 36,
-        'h3': 28,
+        'h3': 62,
         'h4': 26,
         'h5': 14,
         'h6': 12,
@@ -174,7 +174,7 @@ $abbr-underline: 1px dotted $black;
 $lead-font-size: $global-font-size * 1.25;
 $lead-lineheight: 1.6;
 $subheader-lineheight: 1.4;
-$subheader-color: $dark-gray;
+$subheader-color: $primary-color;
 $subheader-font-weight: 100;
 $subheader-margin-top: 0rem;
 $subheader-margin-bottom: 0.5rem;

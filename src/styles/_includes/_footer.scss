@@ -3,11 +3,18 @@
     border-top: 6px solid #fff;
     padding-top: rem-calc(49);
     padding-bottom: rem-calc(15);
-    color: $primary-color;
+    color: $dark-gray;
     position: relative;
     z-index: 4;
     h6 {
         margin-bottom: 10px;
+        font-family: $roboto;
+        font-weight: bold;
+        color: $button-color;
+    }
+    a {
+        color: $input-placeholder-color;
+        font-size: 11px;
     }
     ul {
         li {

@@ -29,11 +29,11 @@ ul {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $times;
+    font-weight: normal;
+    color: #000000;
 }
 
 .subheader {
-    font-family: $roboto;
-    text-transform: uppercase;
     margin-bottom: 67px;
     text-align: center;
 }
@@ -46,19 +46,9 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
-h2 {
-    text-transform: uppercase;
-}
-
-h3 {
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
 h4 {
     &.uppercase {
         font-weight: normal;
-        text-transform: uppercase;
         color: $primary-color;
     }
 }

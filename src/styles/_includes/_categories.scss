@@ -4,7 +4,7 @@
         margin-bottom: 54px;
         display: block;
         &:not(.preview-category) {
-            @extend %shadow;
+            //@extend %shadow;
         }
         &.preview-category {
             .categories-item-image {
@@ -13,9 +13,6 @@
             }
             .categories-item-description {
                 text-align: center;
-                h3 {
-                    margin-top: 18px;
-                }
                 h5 {
                     color: $light-gray;
                     text-transform: uppercase;
@@ -37,6 +34,9 @@
             }
         }
         &-description {
+            h3 {
+                color: $primary-color;
+            }
             &.vertical-box {
                 z-index: 1;
                 @extend %full;
@@ -88,7 +88,7 @@
                     left: auto;
                     top: auto;
                     h3 {
-                        margin-bottom: 22px;
+                        margin-bottom: 11px;
                     }
                     &.right {
                         right: auto;

@@ -1951,43 +1951,64 @@ function contentSlide(subHeight) {
     });
 }
 
-function initSubmenu() {
-    $('.navigation .menu li').each(function() {
-        if ($(this).find('.submenu').length) {
-            $(this).addClass('has-submenu');
-        }
-    });
+function submenuHandler() {
+    var isLaunch = false;
 
-    $('.submenu').stop().slideUp(0);
+    return {
+        init: function() {
+            $('.navigation .menu li').each(function() {
+                if ($(this).find('.submenu').length) {
+                    $(this).addClass('has-submenu');
+                }
+            });
 
-    $('.navigation li.has-submenu>a').click(function() {
-        var that = $(this);
-        var submenu = that.siblings('.submenu');
+            $('.submenu').stop().slideUp(0);
 
-        if ($('.submenu.active').length > 0) {
-            if (submenu.hasClass('active')) {
-                submenu.stop().slideUp(function() {
+            $('.navigation li.has-submenu>a').click(function() {
+                var that = $(this);
+                var submenu = that.siblings('.submenu');
+
+                if ($('.submenu.active').length > 0) {
+                    if (submenu.hasClass('active')) {
+                        submenu.stop().slideUp(function() {
+                            submenu.removeClass('active');
+                            that.removeClass('active');
+                        });
+                        contentSlide(0);
+                    } else {
+                        isLaunch = true;
+                        $('.submenu.active').stop().slideUp(function() {
+                            $('.submenu.active').removeClass('active');
+                            submenu.addClass('active');
+                            submenu.slideDown();
+                            $('.navigation li.has-submenu>a').removeClass('active');
+                            that.addClass('active');
+                        });
+                    }
+                } else {
+                    isLaunch = true;
+                    submenu.addClass('active');
+                    contentSlide();
+                    submenu.stop().slideDown();
+                    that.addClass('active');
+                }
+            });
+        },
+        scroll: function() {
+            if (isLaunch) {
+                isLaunch = false;
+                var submenu = $('.submenu.active');
+                submenu.stop().slideUp(300, function() {
                     submenu.removeClass('active');
-                    that.removeClass('active');
+                    submenu.siblings('a').removeClass('active');
                 });
                 contentSlide(0);
-            } else {
-                $('.submenu.active').stop().slideUp(function() {
-                    $('.submenu.active').removeClass('active');
-                    submenu.addClass('active');
-                    submenu.slideDown();
-                    $('.navigation li.has-submenu>a').removeClass('active');
-                    that.addClass('active');
-                });
             }
-        } else {
-            submenu.addClass('active');
-            contentSlide();
-            submenu.stop().slideDown();
-            that.addClass('active');
         }
-    });
+    }
+
 }
+
 
 function tabs(block) {
     if (typeof(block) === 'undefined') block = $('.tabs');
@@ -2102,6 +2123,8 @@ $(document).ready(function() {
 
     $(document).foundation();
 
+    var submenu = submenuHandler();
+
     initCarousel();
     initSlider();
     tabs();
@@ -2112,17 +2135,18 @@ $(document).ready(function() {
     detailSizeChange();
     detailColorSelect();
     switcherInit();
-    initSubmenu();
     contentHeight();
+    submenu.init();
 
     $('form').each(function() {
         $(this).validate();
     });
 
+
     var initHeaderHeight = $('.header').outerHeight();
-    console.log(initHeaderHeight);
     $(window).on('scroll', function() {
         scrollHandler(initHeaderHeight);
+        submenu.scroll();
     });
     $(window).on('resize', function() {
         fixedResponsive();

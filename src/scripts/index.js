@@ -100,8 +100,20 @@ function fixedResponsive() {
     var submenuHeight = ($('.submenu.active').length > 0) ? $('.submenu.active').outerHeight() : 0;
     var headerHeight = $('.header').outerHeight();
     var documentTop = $(document).scrollTop();
+    var hint = $('.header-hint');
+    var hintHeight = (hint.length) ? hint.outerHeight() : 0;
     $('.content').css({
         'margin-top': headerHeight + previewHeight + submenuHeight
+    });
+    $('.header').css({
+        top: hintHeight
+    });
+
+    $('.preview').css({
+        'top': headerHeight + hintHeight
+    });
+    $('.content').css({
+        'margin-top': headerHeight + previewHeight + hintHeight
     });
 }
 
@@ -282,6 +294,28 @@ function contentHeight() {
     })
 }
 
+function headerHint() {
+    var hint = $('.header-hint');
+    if (hint.length) {
+        $('body').addClass('hintOpen');
+    }
+    $(document).on('click', '.header-hint-close', function() {
+        $('body').removeClass('hintOpen');
+        hint.slideUp(function() {
+            $(this).remove();
+        });
+
+        $('.header').animate({
+            top: 0
+        });
+        $('.preview').animate({
+            'top': $('.header').outerHeight()
+        });
+        $('.content').animate({
+            'margin-top': $('.header').outerHeight() + $('.preview').outerHeight()
+        });
+    });
+}
 
 var openedOnEither = false;
 
@@ -296,13 +330,14 @@ $(document).ready(function() {
     tabs();
     sideMenu();
     productRate();
-    fixedResponsive();
     checkoutItem();
     detailSizeChange();
     detailColorSelect();
     switcherInit();
     contentHeight();
     submenu.init();
+    fixedResponsive();
+    headerHint();
 
     $('form').each(function() {
         $(this).validate();
@@ -313,8 +348,12 @@ $(document).ready(function() {
     $(window).on('scroll', function() {
         scrollHandler(initHeaderHeight);
         submenu.scroll();
+        $('.header-hint-close').trigger('click');
     });
     $(window).on('resize', function() {
+        fixedResponsive();
+    });
+    $(window).on('load', function() {
         fixedResponsive();
     });
 });

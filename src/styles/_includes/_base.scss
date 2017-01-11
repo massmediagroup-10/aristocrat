@@ -4,6 +4,11 @@ html {
 html, body {
     position: relative;
 }
+body {
+    &.hintOpen {
+
+    }
+}
 
 main.content {
     position: relative;

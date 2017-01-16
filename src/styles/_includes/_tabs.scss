@@ -31,6 +31,9 @@
                 border-color: #d7d7d7;
             }
         }
+        &-hidden {
+            border: none;
+        }
     }
     &-content {
         border: 0;
@@ -43,6 +46,11 @@
         }
         .column:last-child {
             float: left;
+        }
+        .column {
+            &:last-child {
+                float: left;
+            }
         }
     }
 }

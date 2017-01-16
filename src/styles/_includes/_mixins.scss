@@ -108,3 +108,11 @@
         background: rgba(0, 0, 0, 0.5);
     }
 }
+
+
+%lowercase {
+    text-transform: lowercase;
+    &:first-letter {
+        text-transform: uppercase;
+    }
+}

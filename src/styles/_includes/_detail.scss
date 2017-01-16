@@ -7,6 +7,7 @@
     }
     &-main {
         h4 {
+            font-family: $roboto;
             font-weight: normal;
             color: $primary-color;
             letter-spacing: 1px;
@@ -123,10 +124,10 @@
         .button {
             min-width: 224px;
             &:not(:last-child) {
-                margin-right:16px;
+                margin-right: 16px;
             }
             &.large {
-                font-size: 1.2em;
+                font-size: 1em;
                 .fa {
                     margin-right: 0;
                 }

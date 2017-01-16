@@ -2130,6 +2130,7 @@ function contentHeight() {
 
 function headerHint() {
     var hint = $('.header-hint');
+    var speed = ($('body').scrollTop() != 0) ? 0 : 400;
     if (hint.length) {
         $('body').addClass('hintOpen');
     }
@@ -2141,17 +2142,15 @@ function headerHint() {
 
         $('.header').animate({
             top: 0
-        });
+        }, speed);
         $('.preview').animate({
             'top': $('.header').outerHeight()
-        });
+        }, speed);
         $('.content').animate({
             'margin-top': $('.header').outerHeight() + $('.preview').outerHeight()
-        });
+        }, speed);
     });
 }
-
-var openedOnEither = false;
 
 $(document).ready(function() {
 

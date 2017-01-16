@@ -12,9 +12,9 @@
         position: relative;
         &-image {
             margin-bottom: 20px;
-            height: 220px;
+            height: 370px;
             img {
-                max-height: 220px;
+                max-height: 370px;
                 margin: 0 auto;
                 transition: 350ms all cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 &:hover {
@@ -24,9 +24,12 @@
         }
         &-description {
             h5 {
+                font-size: 15px;
                 font-family: $roboto;
                 text-transform: uppercase;
-                margin-bottom: 6px
+                margin-bottom: 6px;
+                height: 35px;
+                overflow: hidden;
             }
             p {
                 margin-bottom: 7px;
@@ -58,7 +61,7 @@
             }
         }
         h5 {
-            font-size: 16px;
+            font-size: 14px;
             &.secondary {
                 font-size: 14px;
             }
@@ -80,6 +83,8 @@
     }
     &-thumbnail {
         float: left;
+        width: 85px;
+        margin-bottom: 1rem;
     }
     &-summary {
         margin-left: 110px;
@@ -93,4 +98,17 @@
 }
 
 .trending {
+}
+#purchase_confirm {
+    margin-top: 25px;
+}
+.model-data h4 span {
+    text-align: right;
+    float: right;
+    font-size: 10px;
+    line-height: 40px;
+}
+.size-guide-href {
+    text-decoration: underline;
+    margin-left: 20px;
 }

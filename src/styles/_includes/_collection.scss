@@ -16,7 +16,8 @@
                 padding-top: 23px;
                 letter-spacing: 0.7px;
                 margin-bottom: 3px;
-                font-size: 62px;
+                @extend h3;
+                @extend %lowercase;
             }
             p {
                 font-size: $size-h5;
@@ -63,6 +64,8 @@
             h4 {
                 font-weight: normal;
                 margin-bottom: 17px;
+
+                @extend %lowercase;
             }
             p {
                 font-size: 12px;

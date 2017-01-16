@@ -4,17 +4,13 @@ html {
 html, body {
     position: relative;
 }
-body {
-    &.hintOpen {
-
-    }
-}
 
 main.content {
     position: relative;
     background: #fff;
     z-index: 4;
     margin-top: 619px;
+    padding-top: 30px;
     .content-inner {
         position: relative;
         z-index: 4;
@@ -80,7 +76,8 @@ h5 {
     &.primary {
         background: #bf9e8f;
         color: #fff;
-        &:hover {
+        &:hover,
+        &:focus {
             background: #967f74;
             color: #fff;
         }
@@ -141,7 +138,7 @@ h5 {
             .hidden {
                 top: 0;
                 opacity: 1;
-                font-size: 12px;
+                font-size: 10px;
             }
         }
         .current {
@@ -344,7 +341,7 @@ a {
         margin-bottom: 48px;
     }
     p {
-        font-size: 14px;
+        font-size: 28px;
         font-family: $times;
         margin-bottom: 42px;
     }

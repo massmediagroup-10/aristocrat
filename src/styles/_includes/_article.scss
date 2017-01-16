@@ -1,0 +1,60 @@
+$header-article-sizes: (
+    small: (
+        'h1': 34,
+        'h2': 28,
+        'h3': 22,
+        'h4': 18,
+        'h5': 14,
+        'h6': 12,
+    ),
+    medium: (
+        'h1': 38,
+        'h2': 32,
+        'h3': 26,
+        'h4': 20,
+        'h5': 18,
+        'h6': 14,
+    ),
+);
+$headings: h1, h2, h3, h4, h5, h6;
+@mixin header-article-size($type){
+    font-size: rem-calc(map_get(map_get($header-article-sizes, "small"),$type) * 1px);
+    @include breakpoint(medium){
+        font-size: rem-calc(map_get(map_get($header-article-sizes, "medium"),$type) * 1px);
+    }
+}
+.article {
+    margin-bottom: 60px;
+    color: #4c4c4c;
+
+    @each $heading in $headings {
+        #{$heading}:not(.article-title) {
+            font-family: $roboto;
+            @include header-article-size(#{$heading});
+        }
+    }
+    &-title {
+        text-align: center;
+    }
+    &-image {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    &-text {
+        font-size: 14px;
+        p {
+            margin-bottom: 1em;
+        }
+    }
+    ul {
+        margin-bottom: 1.5em;
+        padding-left: 3em;
+        li {
+            list-style: disc;
+        }
+    }
+    ol {
+        margin-bottom: 1.5em;
+        padding-left: 3em;
+    }
+}

@@ -1,6 +1,6 @@
 .filter {
     background: #f0f0f0;
-    font-family: $times;
+    font-family: $roboto;
     margin-bottom: 30px;
     &-item {
         padding: 0 11px;
@@ -22,7 +22,8 @@
     }
     h6 {
         color: rgb(131, 131, 131);
-        text-transform: uppercase;
+        text-transform: uppercase;        
+        font-family: $roboto;
         font-weight: normal;
         border-bottom: 1px solid #838383;
         padding-top: 19px;

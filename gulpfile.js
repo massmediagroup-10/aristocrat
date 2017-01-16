@@ -78,7 +78,9 @@ gulp.task('templates', function() {
                 message:"<%= error.message %>"
             })
         }))
-        .pipe(pug())
+        .pipe(pug({
+            pretty: true
+        }))
         .pipe(gulp.dest(routes.files.html))
         .pipe(browserSync.stream())
         .pipe(notify({

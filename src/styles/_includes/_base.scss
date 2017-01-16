@@ -300,19 +300,27 @@ a {
 .reveal {
     padding-top: 25px;
     padding-bottom: 25px;
+    font-family: $roboto;
+    outline-color: #ffdbcc;
     h2, p {
         color: #4c4c4c;
-        text-align: center;
+        font-family: $roboto;
     }
     h2 {
         font-size: 26px;
         font-weight: normal;
-        margin-bottom: 18px;
+        margin-bottom: 1.35em;
+        text-transform: uppercase;
     }
     p {
         font-size: 14px;
-        font-family: $times;
         margin-bottom: 10px;
+        text-align: center;
+    }
+    table {
+        td {
+            text-align: center;
+        }
     }
     .button {
         margin-bottom: 15px;
@@ -327,6 +335,14 @@ a {
     &.xsmall {
         @media #{$medium-up} {
             width: 360px;
+        }
+    }
+    &-close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        .fa {
+            font-size: 16px;
         }
     }
 }

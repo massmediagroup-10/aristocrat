@@ -27,9 +27,7 @@
             line-height: 21px;
             margin-bottom: 14px;
             p {
-                margin-top: 4px;
-                line-height: 21px;
-                color: #bfbfbf;
+               @extend .form-hint;
             }
         }
         &.active {
@@ -41,6 +39,7 @@
             }
         }
     }
+
     &-title {
         border-bottom: 1px solid $button-background;
         padding-bottom: 2px;

@@ -24,15 +24,14 @@ $headings: h1, h2, h3, h4, h5, h6;
     }
 }
 .article {
-    margin-bottom: 60px;
-    color: #4c4c4c;
-
     @each $heading in $headings {
         #{$heading}:not(.article-title) {
             font-family: $roboto;
             @include header-article-size(#{$heading});
         }
     }
+    margin-bottom: 60px;
+    color: #4c4c4c;
     &-title {
         text-align: center;
     }

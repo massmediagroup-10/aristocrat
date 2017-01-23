@@ -16,7 +16,7 @@
                 padding-top: 23px;
                 letter-spacing: 0.7px;
                 margin-bottom: 3px;
-                @extend h3;
+                font-size: 62px;
                 @extend %lowercase;
             }
             p {
@@ -64,7 +64,7 @@
             h4 {
                 font-weight: normal;
                 margin-bottom: 17px;
-
+                
                 @extend %lowercase;
             }
             p {

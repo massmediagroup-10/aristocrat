@@ -114,4 +114,15 @@
             display: none !important;
         }
     }
+    .button {
+        line-height: rem-calc(28.9);
+        padding: .4rem;
+    }
+    &-hint,
+    & &-hint {
+        font-size: 1rem;
+        margin-top: 4px;
+        line-height: 21px;
+        color: #bfbfbf;
+    }
 }

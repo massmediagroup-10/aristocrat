@@ -1,0 +1,103 @@
+doctype html
+html
+    include _includes/_head.pug
+    body.starterkit.innerpage
+        .header-line
+        header.header
+            include _includes/_header.pug
+            .breadcrumbs
+                ul
+                    li
+                        a(href='/') Home
+                    li
+                        span Shopping bag
+        main.content
+            .checkout.row.column
+                h3.uppercase Sign in
+                .row
+                    .large-12.column.float-right
+                        .checkout-item.expanded.form.active
+                            form(name="regular_customer")
+                                .checkout-title
+                                    span regular customer
+                                .checkout-body
+                                    .row
+                                        .large-4.column
+                                            label
+                                                |E-mail
+                                                input(type="email",placeholder="E-mail Adress", required="required")
+                                        .large-4.column
+                                            label
+                                                | Password *
+                                                input(type="password",placeholder="Your password", required="required")
+                                        .large-4.column
+                                            label
+                                                | &nbsp;
+                                                .large-8.small-6
+                                                    input.button.block.accented.large(type="submit",value="Sign in")
+                                                    a(data-open="forgotpass").medium-right Forgot your password?
+
+                        .checkout-item.expanded.form
+                            form(name="new_customer")
+                                .checkout-title
+                                    span New customer
+                                .checkout-body
+                                    .row
+                                        .large-6.column
+                                            label
+                                                |Name *
+                                                input(type="text",placeholder="Your Name", required="required")
+                                        .large-6.column
+                                            label
+                                                |Surname *
+                                                input(type="password",placeholder="Your Surname", required="required")
+                                    .row
+                                        .large-6.column
+                                            label
+                                                | E-mail *
+                                                input(type="email",placeholder="E-mail Adress", required="required")
+                                        .large-6.column
+                                            label
+                                                | Phone
+                                                input(type="tel",placeholder="Your Phone")
+                                    .row
+                                        .large-6.column
+                                            label
+                                                | Your pasword *
+                                                input(type="email",placeholder="Your password", required="required")
+                                        .large-6.column
+                                            label
+                                                | Repeat password *
+                                                input(type="tel",placeholder="Your password", required="required")
+                                    .checkout-additional
+                                        .filter-field.checkbox-group
+                                            input#checkbox1(type='checkbox')
+                                            label.checkbox(for='checkbox1')
+                                                span.box
+                                                    i.fa.fa-check
+                                                | I`m agree to the
+                                                a terms,
+                                        .filter-field.checkbox-group
+                                            input#checkbox2(type='checkbox')
+                                            label.checkbox(for='checkbox2')
+                                                span.box
+                                                    i.fa.fa-check
+                                                | I’ want to subscribe to the mailing
+                                    input.button.accented.large(type="submit",value="confirm")
+
+        #forgotpass.reveal.xsmall(data-reveal='',data-options="showDelay:300; hideDelay:300")
+            a.reveal-close(aria-label='Close', data-close)
+                i.fa.fa-close
+            h2.text-center Forgot your password?
+            .form
+                input(type="email",placeholder="E-mail Adress", required="required")
+                p.form-hint Enter the email address used for your account. We will then
+                    | email you with a link that you can click to create a new password.
+                input.button.block.accented.large(type="submit",value="Send")
+
+        footer.footer
+            include _includes/_footer.pug
+
+    script(src="js/jquery.min.js")
+    script(src="js/script.js")
+    script(src="js/slick.min.js")

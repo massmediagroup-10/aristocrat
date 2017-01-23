@@ -66,6 +66,11 @@ h5 {
     &:hover {
         color: #3c3c3c;
     }
+    &.button-disable {
+        z-index: -1;
+        position: relative;
+        cursor: default;
+    }
     &.secondary {
         color: #fff;
         &:hover {
@@ -200,6 +205,11 @@ select {
 a {
     .fa {
         margin-right: 6px;
+    }
+    &.button-disable {
+        z-index: -1;
+        position: relative;
+        cursor: default;
     }
 }
 
@@ -360,5 +370,11 @@ a {
         font-size: 28px;
         font-family: $times;
         margin-bottom: 42px;
+    }
+}
+
+@each $name, $value in $breakpoints {
+    @media (min-width: #{$value}) {
+        .#{$name}-right   { float: right !important; }
     }
 }

@@ -101,7 +101,7 @@ gulp.task('styles', function() {
         }))
         //.pipe(sourcemaps.init())
         .pipe(sass({
-            precision: 1,
+            precision: 2,
             includePaths: [
                 'node_modules/foundation-sites/scss',
                 'node_modules/font-awesome/scss',

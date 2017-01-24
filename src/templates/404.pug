@@ -1,0 +1,34 @@
+doctype html
+html
+    include _includes/_head.pug
+    body.starterkit.innerpage
+        .header-line
+        header.header
+            include _includes/_header.pug
+            .breadcrumbs
+                ul
+                    li
+                        a(href='/') Home
+                    li
+                        a(href='#') Royal Boutique
+                    li
+                        span Aristocrat Kids
+        main.content
+            .nofound
+                .nofound-text.medium-5.column
+                    h3
+                        | Sorry we couldn't find the page <br />
+                        | you are looking for.
+                    p
+                        | It may have been removed, changed or it is temporarily unavailable. <br />
+                        |Please return to our home page to continue browsing our site.
+                .nofound-img
+                    img(src="files/img/preview.jpg")
+
+
+        footer.footer
+            include _includes/_footer.pug
+
+    script(src="js/jquery.min.js")
+    script(src="js/script.js")
+    script(src="js/slick.min.js")

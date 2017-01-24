@@ -1,0 +1,59 @@
+.account-content.newsletter(id="personal")
+    form.form
+        .form-area.row.medium-8
+            .medium-6.column
+                label
+                    | First name
+                    input(type="text", placeholder="First name", required="required")
+            .medium-6.column
+                label
+                    | Last name
+                    input(type="text", placeholder="Last name", required="required")
+            .medium-6
+                .column
+                    label
+                        | Email
+                        input(type="email", placeholder="Email")
+            .medium-6
+                .column
+                    label
+                        | Gender
+                        select
+                            option(value="male") male
+                            option(value="female") female
+            .medium-6
+                .column
+                    label
+                        | Date of Birth
+                    .form-date
+                        .medium-4.column
+                            select
+                                option(value="") 05
+                                option(value="") 06
+                        .medium-4.column
+                            select
+                                option(value="") Nov
+                                option(value="") Dec
+                        .medium-4.column
+                            select
+                                option(value="") 1986
+                                option(value="") 1987
+        h6 Change Password
+        .form-area.row.medium-8
+            .medium-6
+                .column
+                    label
+                        | Your password
+                        input(type="password", placeholder="Your password")
+            .medium-6
+                label
+                    .column
+                        | New password
+                        input(type="password", placeholder="New password")
+            .medium-6
+                label
+                    .column
+                        | Confirm password
+                        input(type="password", placeholder="Confirm password")
+
+        input.button.accented.large(type="submit", value="SAVE CHANGES")

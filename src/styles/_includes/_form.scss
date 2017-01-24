@@ -94,11 +94,14 @@
     [type='email'],
     [type='number'],
     [type='search'],
-    [type='tel'] {
+    [type='tel'],
+    select {
         height: 40px;
+        max-width: none;
         border: 1px solid #efefef !important;
         padding-left: 12px;
         font-size: 12px;
+        margin-bottom: 15px;
         &:not(:focus) {
             box-shadow: none;
         }
@@ -110,6 +113,7 @@
         }
     }
     label {
+        font-size: 1rem;
         &.error {
             display: none !important;
         }
@@ -124,5 +128,19 @@
         margin-top: 4px;
         line-height: 21px;
         color: #bfbfbf;
+    }
+    &-area {
+        margin-bottom: 15px;
+    }
+    &-date {
+        @extend %clear;
+        margin-left: -5px;
+        margin-right: -5px;
+
+        .column,
+        .column:last-child {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
     }
 }

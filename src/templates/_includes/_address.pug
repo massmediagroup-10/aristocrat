@@ -1,0 +1,49 @@
+.account-content.newsletter(id="address")
+    form.form
+        .form-area.row.medium-8
+            .medium-6.column
+                label
+                    | First name
+                    input(type="text",placeholder="First name", required="required")
+            .medium-6.column
+                label
+                    | Last name
+                    input(type="text",placeholder="Last name", required="required")
+            .medium-6.column
+                label
+                    | Telephone
+                    input(type="text",placeholder="Telephone")
+            .medium-6.column
+                label
+                    | Mobile
+                    input(type="text",placeholder="Mobile")
+        h6 address information
+        .form-area.row.medium-8
+            .medium-6.column
+                label
+                    | Country
+                    select
+                        option(value="Latvia") Latvia
+                        option(value="Latvia2") Latvia2
+            .medium-6.column
+                label
+                    | Town/City
+                    input(type="text",placeholder="Town/City", required="required")
+            .medium-6.column
+                label
+                    | Post Code/ZIP
+                    input(type="text",placeholder="Post Code/ZIP", required="required")
+            .medium-6.column
+                label
+                    | Town/City
+                    input(type="text",placeholder="County/Province", required="required")
+            .medium-12.column
+                label
+                    | Address line 1
+                    input(type="text",placeholder="Address line 1", required="required")
+            .medium-12.column
+                label
+                    | Address line 2
+                    input(type="text",placeholder="Address line 2")
+            .column
+                input.button.accented.large(type="submit",value="SAVE ADDRESS")

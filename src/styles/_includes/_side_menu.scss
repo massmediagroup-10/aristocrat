@@ -48,3 +48,30 @@ ul.side-menu {
     }
 
 }
+
+.simple-menu {
+    ul {
+        li {
+            a {
+                text-transform: uppercase;
+                border-bottom: 1px solid #c9c9c9;
+                display: block;
+                line-height: rem-calc(40px);
+                i {
+                    line-height: rem-calc(40px);
+                    float: right;
+                    opacity: 0;
+                    transition: 300ms all ease;
+                }
+            }
+            &.active a,
+            & a:hover {
+                color: #f24841;
+                i {
+                    opacity: 1;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

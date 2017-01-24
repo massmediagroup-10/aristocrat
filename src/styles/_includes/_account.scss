@@ -1,0 +1,57 @@
+.account {
+    margin-bottom: 4rem;
+    &-content {
+        padding-top: 16px;
+        .column:not(.end):last-child {
+            //padding-left: rem-calc(map-get($grid-column-gutter, medium))/2;
+        }
+        .shopping-table {
+            p {
+                a {
+                    margin-left: 15px;
+                    text-decoration: underline;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .form {
+            p {
+                margin-bottom: 15px;
+                line-height: 1.8;
+            }
+        }
+    }
+    &-shopping {
+        &-item {
+            padding: 0px 0 20px 0;
+            &:last-child {
+            }
+        }
+        &-list {
+            padding-left: 1px;
+            padding-right: 1px;
+            padding-top: 20px;
+            margin-top: 15px;
+            border-top: 1px solid #e8e8e8;
+            .shopping-table-tr {
+                border-bottom: 0;
+                @extend %last;
+            }
+            p {
+                s {
+                    color: #999999;
+                    margin-left: 10px;
+                }
+            }
+        }
+        &-total {
+            padding-top: 20px;
+            border-top: 1px solid #e8e8e8;
+        }
+        .status {
+            text-transform: uppercase;
+        }
+    }
+}

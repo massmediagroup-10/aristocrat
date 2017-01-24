@@ -1,6 +1,7 @@
 html {
     height: 100%;
 }
+
 html, body {
     position: relative;
 }
@@ -56,6 +57,19 @@ h4 {
 
 h5 {
     font-weight: normal;
+}
+
+h6 {
+    font-family: $roboto;
+    text-transform: uppercase;
+}
+
+.focusout {
+    color: $light-gray;
+}
+
+.important {
+    color: #f24841;
 }
 
 .button {
@@ -373,8 +387,33 @@ a {
     }
 }
 
+.nofound {
+    &-img {
+        img {
+            width: 100%;
+        }
+    }
+    &-text {
+        position: absolute;
+        top: 10em;
+        left: 10em;
+        h3 {
+            line-height: 1em;
+            margin-bottom: 0.8em;
+        }
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, medium)) {
+    .medium-4 {
+        width: 33.3%;
+    }
+}
+
 @each $name, $value in $breakpoints {
     @media (min-width: #{$value}) {
-        .#{$name}-right   { float: right !important; }
+        .#{$name}-right {
+            float: right !important;
+        }
     }
 }

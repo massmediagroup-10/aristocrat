@@ -10,8 +10,7 @@ main.content {
     position: relative;
     background: #fff;
     z-index: 4;
-    margin-top: 619px;
-    padding-top: 30px;
+    margin-top: 261px;
     .content-inner {
         position: relative;
         z-index: 4;
@@ -30,13 +29,14 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $times;
+    font-family: $roboto;
     font-weight: normal;
     color: #000000;
+    text-transform: uppercase;
 }
 
 .subheader {
-    margin-bottom: 67px;
+    margin-bottom: rem-calc(67px);
     text-align: center;
 }
 

@@ -102,36 +102,27 @@ function scrollHandler(initHeaderHeight) {
 }
 
 function fixedResponsive() {
-    var previewHeight = ($('.preview').length > 0) ? $('.preview').outerHeight() : 0;
     var submenuHeight = ($('.submenu.active').length > 0) ? $('.submenu.active').outerHeight() : 0;
     var headerHeight = $('.header').outerHeight();
     var documentTop = $(document).scrollTop();
     var hint = $('.header-hint');
     var hintHeight = (hint.length) ? hint.outerHeight() : 0;
     $('.content').css({
-        'margin-top': headerHeight + previewHeight + submenuHeight
+        'margin-top': headerHeight + submenuHeight
     });
     $('.header').css({
         top: hintHeight
     });
-
-    $('.preview').css({
-        'top': headerHeight + hintHeight
-    });
     $('.content').css({
-        'margin-top': headerHeight + previewHeight + hintHeight
+        'margin-top': headerHeight + hintHeight
     });
 }
 
 function contentSlide(subHeight) {
     var submenuHeight = (typeof subHeight === 'undefined') ? $('.submenu.active').outerHeight() : subHeight;
-    var previewHeight = ($('.preview').length > 0) ? $('.preview').outerHeight() : 0;
     var headerHeight = $('.header').outerHeight();
     $('.content').stop().animate({
-        'margin-top': headerHeight + previewHeight + submenuHeight
-    });
-    $('.preview').stop().animate({
-        'top': headerHeight + submenuHeight
+        'margin-top': headerHeight + submenuHeight
     });
 }
 
@@ -334,11 +325,8 @@ function headerHint() {
         $('.header').animate({
             top: 0
         }, speed);
-        $('.preview').animate({
-            'top': $('.header').outerHeight()
-        }, speed);
         $('.content').animate({
-            'margin-top': $('.header').outerHeight() + $('.preview').outerHeight()
+            'margin-top': $('.header').outerHeight()
         }, speed);
         $.ajax({
             url: confirmCookie,
@@ -425,6 +413,7 @@ $(document).ready(function() {
     var submenu = submenuHandler();
     var initHeaderHeight = $('.header').outerHeight();
     $(document).foundation();
+    $('#datepicker').fdatepicker({});
 
     initCarousel();
     initSlider();
@@ -449,7 +438,6 @@ $(document).ready(function() {
     });
 
     $(window).on('scroll', function() {
-        console.log(canHandling);
         if (canHandling) scrollHandler(initHeaderHeight);
         submenu.scroll();
     });

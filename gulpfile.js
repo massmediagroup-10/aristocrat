@@ -147,6 +147,7 @@ gulp.task('scripts', function() {
             'node_modules/foundation-sites/js/foundation.util.triggers.js',
             'node_modules/foundation-sites/js/foundation.reveal.js',
             'node_modules/foundation-sites/js/foundation.util.motion.js',
+            'node_modules/foundation-datepicker/js/foundation-datepicker.js',
             'node_modules/jquery-validation/dist/jquery.validate.min.js',
             routes.scripts.js
         ])

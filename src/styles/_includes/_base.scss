@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 .subheader {
     margin-bottom: rem-calc(67px);
     text-align: center;
+    font-size: 24px;
 }
 
 .thirdheader {
@@ -45,6 +46,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $roboto;
     font-weight: 300;
     display: inline-block;
+    text-transform: uppercase;
+}
+
+.uppercase {
     text-transform: uppercase;
 }
 
@@ -56,12 +61,12 @@ h4 {
 }
 
 h5 {
+    text-transform: none;
     font-weight: normal;
 }
 
 h6 {
-    font-family: $roboto;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .focusout {
@@ -264,7 +269,7 @@ a {
         }
     }
     .content {
-        padding-top: 0;
+        padding-top: 2rem;
         margin-top: 232px;
     }
 }
@@ -333,7 +338,7 @@ a {
     h2 {
         font-size: 26px;
         font-weight: normal;
-        margin-bottom: 1.35em;
+        margin-bottom: 1.1em;
         text-transform: uppercase;
     }
     p {

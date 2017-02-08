@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,700');
-
 @mixin font($fontName, $fontFamily, $fw:normal, $fs:normal ){
     @font-face {
         font-family: '#{$fontFamily}';
@@ -14,4 +12,4 @@
 }
 
 @include font('LibreBaskerville-Regular', 'Baskerville', normal, normal);
-@include font('Isabella', 'Isabella', normal, normal);
+@include font('LibreBaskerville-Bold', 'Baskerville', bold, normal);

@@ -176,6 +176,8 @@
                 & > ul {
                     opacity: 1;
                     z-index: 1;
+                    left: 0;
+                    top: 100%
                 }
             }
             ul {
@@ -185,9 +187,12 @@
                 min-width: 170px;
                 left: 10px;
                 right: 10px;
-                transition: 300ms all ease;
+                transition: 400ms opacity ease;
                 opacity: 0;
                 z-index: -1;
+                position: absolute;
+                left: -99999px;
+                top: -99999px;
                 li {
                     a {
                         display: block;

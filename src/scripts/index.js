@@ -82,8 +82,6 @@ function initSlider() {
         infinite: true,
         speed: 1000,
         fade: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
         pauseOnHover: false
     });
 }
@@ -102,27 +100,22 @@ function scrollHandler(initHeaderHeight) {
 }
 
 function fixedResponsive() {
-    var submenuHeight = ($('.submenu.active').length > 0) ? $('.submenu.active').outerHeight() : 0;
     var headerHeight = $('.header').outerHeight();
     var documentTop = $(document).scrollTop();
     var hint = $('.header-hint');
     var hintHeight = (hint.length) ? hint.outerHeight() : 0;
     $('.content').css({
-        'margin-top': headerHeight + submenuHeight
+        'margin-top': headerHeight + hintHeight
     });
     $('.header').css({
         top: hintHeight
     });
-    $('.content').css({
-        'margin-top': headerHeight + hintHeight
-    });
 }
 
 function contentSlide(subHeight) {
-    var submenuHeight = (typeof subHeight === 'undefined') ? $('.submenu.active').outerHeight() : subHeight;
     var headerHeight = $('.header').outerHeight();
     $('.content').stop().animate({
-        'margin-top': headerHeight + submenuHeight
+        'margin-top': headerHeight
     });
 }
 
@@ -410,7 +403,6 @@ var canHandling = false;
 $(document).ready(function() {
 
     var dataId;
-    var submenu = submenuHandler();
     var initHeaderHeight = $('.header').outerHeight();
     $(document).foundation();
     $('#datepicker').fdatepicker({});
@@ -424,7 +416,6 @@ $(document).ready(function() {
     detailSizeChange();
     detailColorSelect();
     switcherInit();
-    submenu.init();
     contentHeight();
     fixedResponsive();
     headerHint();
@@ -439,7 +430,6 @@ $(document).ready(function() {
 
     $(window).on('scroll', function() {
         if (canHandling) scrollHandler(initHeaderHeight);
-        submenu.scroll();
     });
     $(window).on('resize', function() {
         fixedResponsive();

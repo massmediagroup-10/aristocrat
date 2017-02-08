@@ -8,6 +8,7 @@
             @extend %inline-middle;
             letter-spacing: 2px;
             margin-right: 50px;
+            line-height: 20px;
         }
         .link-remove {
             @extend %inline-middle;
@@ -48,6 +49,7 @@
             left: $list-nested-side-margin;
             top: 0;
             width: 80px;
+            z-index: 1;
         }
         .product-label {
             margin-bottom: 2px;

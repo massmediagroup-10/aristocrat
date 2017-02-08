@@ -2,11 +2,15 @@
     background: #fff;
     border-top: 4px solid $activeColor;
     padding: 13px 0 0;
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 5;
+    position: relative;
+
+    @media #{$large-up} {
+        position: fixed;
+    }
     &.fixed {
         padding-top: 5px;
         z-index: 5 !important;
@@ -103,6 +107,9 @@
         text-align: center;
         background: #4b4b4b;
         padding: 2em 3em;
+        /*@media #{$large-up} {
+            display: block;
+        }*/
         &-close {
             position: absolute;
             right: 2em;
@@ -122,32 +129,120 @@
     border-bottom: 4px solid #fff;
     position: relative;
     z-index: 1;
+    height: 41px;
+
+    &-panel {
+        line-height: 39px;
+        display: block;
+        @media #{$large-up} {
+            display: none;
+        }
+        &-icons {
+            i {
+                font-size: 18px;
+                margin: 0;
+            }
+            a {
+                margin-right: 25px;
+                @extend %last;
+            }
+        }
+    }
+    &-collapse {
+        h6 {
+            padding: 0 1rem;
+            a {
+                text-transform: uppercase;
+                color: $primary-color;
+            }
+            @media #{$large-up} {
+                display: none;
+            }
+        }
+        a {
+            color: $secondary-color;
+        }
+        @media #{$breakpoint-max-large} {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 100%;
+            padding: 1rem 0 1rem;
+            background: $activeColor;
+        }
+    }
+    .menu-toggle {
+        font-size: 21px;
+        color: $primary-color;
+        .fa-bars {
+            display: inline-block;
+        }
+        .fa-close {
+            display: none;
+        }
+        &.active {
+            .fa-bars {
+                display: none;
+            }
+            .fa-close {
+                display: inline-block;
+            }
+        }
+    }
     .menu {
         display: table;
         width: 100%;
-
+        left: 0;
         & > li {
-            text-align: center;
             position: relative;
-
+            text-align: left;
+            @media #{$large-up} {
+                text-align: center;
+            }
+            @media #{$breakpoint-max-large} {
+                display: block;
+            }
             &.has-submenu {
                 &:after {
                     content: '';
                 }
             }
+
             & > a {
                 color: $primary-color;
                 text-transform: uppercase;
                 position: relative;
-                &:after {
-                    content: '';
-                    position: absolute;
-                    background: $primary-color;
-                    transition: 300ms all ease;
-                    height: 2px;
-                    left: 50%;
-                    right: 100%;
-                    bottom: 0;
+                &.submenu-link {
+                    &:before {
+                        content: "\f105";
+                        display: inline-block;
+                        font: normal normal normal 16px/1 FontAwesome;
+                        margin-right: 10px;
+                        transform-origin: center;
+                        transition: 300ms all ease;
+                    }
+                    &.collapsed {
+                        &:before {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+                @media #{$large-up} {
+                    &.submenu-link {
+                        &:before {
+                            content: none;
+                        }
+                    }
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        background: $primary-color;
+                        transition: 300ms all ease;
+                        height: 2px;
+                        left: 50%;
+                        right: 100%;
+                        bottom: 0;
+                    }
                 }
                 &.active {
                     &:after {
@@ -166,7 +261,7 @@
                 }
 
             }
-            &:hover a{
+            &:hover a {
                 &:after {
                     left: 10px;
                     right: 10px;
@@ -193,6 +288,7 @@
                 position: absolute;
                 left: -99999px;
                 top: -99999px;
+
                 li {
                     a {
                         display: block;
@@ -203,6 +299,32 @@
                         text-transform: uppercase;
                         &:hover {
                             background: $activeColor;
+                        }
+                    }
+                }
+                @media #{$breakpoint-max-large} {
+                    position: static;
+                    opacity: 1;
+                    z-index: 0;
+                    box-shadow: none;
+                    background: #f2d0c2;
+                    padding-left: 30px;
+                    li {
+                        a {
+                            color: $primary-color;
+                            text-transform: none;
+                            font-size: 1rem;
+                            span {
+                                display: inline-block;
+                                border-bottom: 1px solid transparent;
+                                transition: 300ms all ease;
+                            }
+                            &:hover {
+                                background: inherit;
+                                span {
+                                    border-bottom: 1px solid $primary-color;
+                                }
+                            }
                         }
                     }
                 }

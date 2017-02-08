@@ -1,19 +1,17 @@
 .header-main.row.expanded.column
-    .header-search.medium-4.column
+    .header-search.medium-4.column.show-for-large
         .search
             .fa.fa-search
             input.search-input(placeholder="Search")
-    .header-logo.medium-4.column.text-center
+    .header-logo.small-12.large-4.column.text-center
         a(href='/')
             img(src='files/img/logo.png')
-    .header-menu.medium-4.column.medium-text-right
+    .header-menu.large-4.column.medium-text-right.show-for-large
         ul
             li
                 a
                     i.fa.fa-star
                     span Wishlist
-
-
             li
                 a.shopping-bag
                     i.fa.fa-shopping-bag
@@ -24,37 +22,64 @@
                     span My account
 nav.navigation
     .row.column
-        ul.menu
-            li
-                a OUR KINGDOM
-                ul
-                    li
-                        a
-                            | About Aristocrat
-                            | Kids
-                    li
-                        a About Designer
-                    li
-                        a Brand Values
-                    li
-                        a Royal Tale
+        .navigation-panel
+            a.menu-toggle
+                i.fa.fa-bars
+                i.fa.fa-close
+            .navigation-panel-icons.float-right
+                a
+                   i.fa.fa-search
+                a
+                    i.fa.fa-star
+                a
+                    i.fa.fa-shopping-bag
+        .navigation-collapse
+            h6
+                a My account
+            ul.menu
+                li
+                    a.submenu-link
+                        span OUR KINGDOM
+                    ul.submenu
+                        li
+                            a
+                                span
+                                    | About Aristocrat
+                                    | Kids
+                        li
+                            a
+                                    span About Designer
+                        li
+                            a
+                                    span Brand Values
+                        li
+                            a
+                                    span Royal Tale
 
-            li
-                a ROYAL ATELIER
-                ul
-                    li
-                        a
-                            | About Aristocrat
-                            | Kids
-                    li
-                        a About Designer
-                    li
-                        a Brand Values
-                    li
-                        a Royal Tale
-            li
-                a COLLECTIONS
-            li
-                a ROYAL BABY
-            li
-                a SPECIAL SERVICES
+                li
+                    a.submenu-link
+                        span ROYAL ATELIER
+                    ul.submenu
+                        li
+                            a
+                                span
+                                    | About Aristocrat
+                                    | Kids
+                        li
+                            a
+                                    span About Designer
+                        li
+                            a
+                                    span Brand Values
+                        li
+                            a
+                                    span Royal Tale
+                li
+                    a
+                        span COLLECTIONS
+                li
+                    a
+                        span ROYAL BABY
+                li
+                    a
+                        span SPECIAL SERVICES

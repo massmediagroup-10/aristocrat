@@ -73,7 +73,7 @@
         </ul>
       </div>
     </header>
-    <main class="content">
+    <main class="content catalog">
       <div class="collection">
         <div class="row column">
           <div class="collection-item innerfull">
@@ -91,37 +91,37 @@
         <div class="column">
           <div class="catalog-head">
             <div class="row">
-              <div class="large-5 column">
+              <div class="catalog-head-top large-5 column"><a class="filter-toggle"><i class="fa fa-filter"></i></a>
                 <div class="thirdheader">filters</div><a class="link-remove"><i class="fa fa-remove"></i>Clear all</a>
-                <select>
-                  <option>Sort by newness</option>
-                  <option>Sort by oldness</option>
-                </select>
-              </div>
-              <div class="large-4 column">
-                <div class="pagination-centered">
-                  <ul class="pagination text-center" role="menubar" aria-label="Pagination">
-                    <li><span class="arrow unavailable" href="" aria-disabled="true"><i class="fa fa-angle-left"></i></span></li>
-                    <li><span class="current">1</span></li>
-                    <li><a href="">2</a></li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">4</a></li>
-                    <li><a href="">5</a></li>
-                    <li aria-disabled="true"><span class="unavailable" href="">...</span></li>
-                    <li><a href="">9</a></li>
-                    <li><a class="arrow" href=""><i class="fa fa-angle-right"></i></a></li>
-                  </ul>
+                <div class="catalog-select">
+                  <select>
+                    <option>Sort by newness</option>
+                    <option>Sort by oldness</option>
+                  </select>
                 </div>
               </div>
-              <div class="large-3 column text-right">
+              <div class="large-4 column">
+                <ul class="pagination text-center" role="menubar" aria-label="Pagination">
+                  <li><span class="arrow unavailable" href="" aria-disabled="true"><i class="fa fa-angle-left"></i></span></li>
+                  <li><span class="current">1</span></li>
+                  <li><a href="">2</a></li>
+                  <li><a href="">3</a></li>
+                  <li><a href="">4</a></li>
+                  <li><a href="">5</a></li>
+                  <li aria-disabled="true"><span class="unavailable" href="">...</span></li>
+                  <li><a href="">9</a></li>
+                  <li><a class="arrow" href=""><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+              </div>
+              <div class="large-3 column">
                 <div class="catalog-head-results">Showing 1–18 of 263 results</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <aside class="large-2 column">
+      <div class="row column">
+        <aside class="catalog-sidebar">
           <div class="filter">
             <div class="filter-item accented gray">
               <h6>Brands</h6>
@@ -185,14 +185,12 @@
             </div>
           </div>
         </aside>
-        <section class="catalog-body large-9 large-offset-1 column">
+        <section class="catalog-body">
           <div class="row">
             <div class="product-item text-center medium-4 small-6 column">
               <div class="product-labels">
-                <div class="product-label success">New</div>
-                <div class="product-label success">New</div>
-                <div class="product-label success">New</div>
-              </div><a class="product-rate"><i class="fa"></i></a>
+                <div class="product-label warning">New</div>
+              </div>
               <div class="product-item-image vertical-box"><a class="vertical-middle"><img src="files/img/product-1.jpg"></a></div>
               <div class="product-item-description">
                 <h5><a>QUEEN FLORA</a></h5>
@@ -200,7 +198,21 @@
                 <h5 class="secondary">$637.92</h5>
               </div>
             </div>
-            <div class="product-item text-center medium-4 small-6 column"><a class="product-rate active"><i class="fa"></i></a>
+            <div class="product-item text-center medium-4 small-6 column">
+              <div class="product-labels">
+                <div class="product-label warning">New</div>
+              </div>
+              <div class="product-item-image vertical-box"><a class="vertical-middle"><img src="files/img/product-1.jpg"></a></div>
+              <div class="product-item-description">
+                <h5><a>QUEEN FLORA</a></h5>
+                <p class="secondary">Handmade Long Silk Dress</p>
+                <h5 class="secondary">$637.92</h5>
+              </div>
+            </div>
+            <div class="product-item text-center medium-4 small-6 column">
+              <div class="product-labels">
+                <div class="product-label warning">New</div>
+              </div>
               <div class="product-item-image vertical-box"><a class="vertical-middle"><img src="files/img/product-1.jpg"></a></div>
               <div class="product-item-description">
                 <h5><a>QUEEN FLORA</a></h5>
@@ -260,27 +272,27 @@
           <div class="catalog-head bottom">
             <div class="row">
               <div class="large-5 column">
-                <select>
-                  <option>Sort by newness</option>
-                  <option>Sort by oldness</option>
-                </select>
-              </div>
-              <div class="large-4 column">
-                <div class="pagination-centered">
-                  <ul class="pagination text-center" role="menubar" aria-label="Pagination">
-                    <li><span class="arrow unavailable" href="" aria-disabled="true"><i class="fa fa-angle-left"></i></span></li>
-                    <li><span class="current">1</span></li>
-                    <li><a href="">2</a></li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">4</a></li>
-                    <li><a href="">5</a></li>
-                    <li aria-disabled="true"><span class="unavailable" href="">...</span></li>
-                    <li><a href="">9</a></li>
-                    <li><a class="arrow" href=""><i class="fa fa-angle-right"></i></a></li>
-                  </ul>
+                <div class="catalog-select">
+                  <select>
+                    <option>Sort by newness</option>
+                    <option>Sort by oldness</option>
+                  </select>
                 </div>
               </div>
-              <div class="large-3 column text-right">
+              <div class="large-4 column">
+                <ul class="pagination text-center" role="menubar" aria-label="Pagination">
+                  <li><span class="arrow unavailable" href="" aria-disabled="true"><i class="fa fa-angle-left"></i></span></li>
+                  <li><span class="current">1</span></li>
+                  <li><a href="">2</a></li>
+                  <li><a href="">3</a></li>
+                  <li><a href="">4</a></li>
+                  <li><a href="">5</a></li>
+                  <li aria-disabled="true"><span class="unavailable" href="">...</span></li>
+                  <li><a href="">9</a></li>
+                  <li><a class="arrow" href=""><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+              </div>
+              <div class="large-3 column">
                 <div class="catalog-head-results">Showing 1–18 of 263 results</div>
               </div>
             </div>

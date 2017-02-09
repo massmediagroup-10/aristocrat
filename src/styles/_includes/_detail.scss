@@ -179,7 +179,10 @@
         margin-bottom: 30px;
         .product-label {
             float: left;
-            margin-left: 33px;
+
+            @media #{$large-up} {
+                margin-left: 27px;
+            }
         }
         img {
             margin: 6px auto;
@@ -189,7 +192,9 @@
         &-main {
             clear: both;
             margin-bottom: 36px;
-            padding: 0 27px;
+            @media #{$large-up} {
+                padding: 0 27px;
+            }
         }
     }
 }

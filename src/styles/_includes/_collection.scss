@@ -33,11 +33,12 @@
             }
         }
         &.full {
-            padding: pxrem(56) pxrem(53) pxrem(55) pxrem(53);
+            padding: pxrem(26) pxrem(23) pxrem(25) pxrem(23);
             .collection-item-image {
                 margin-bottom: 0;
             }
             @media #{$large-up} {
+                padding: pxrem(56) pxrem(53) pxrem(55) pxrem(53);
                 & > .row {
                     display: flex;
                     align-items: center;
@@ -67,11 +68,6 @@
                 font-size: 12px;
                 line-height: 19px;
             }
-        }
-    }
-    &-slider {
-        h3, p {
-            color: #fff;
         }
     }
 }

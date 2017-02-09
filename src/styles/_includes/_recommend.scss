@@ -1,11 +1,5 @@
 .recommend {
-    padding-bottom: 20px;
-    padding-top: 25px;
-    &:not(:last-child) {
-        h3 {
-            border-right: 0;
-        }
-    }
+    margin-bottom: 30px;
     p {
         color: $primary-color;
         margin-bottom: 8px;
@@ -30,12 +24,14 @@
     }
     &-image {
         width: 145px;
-        width: 145px;
-        float: left;
         padding: 0 1px;
+        margin-bottom: 15px;
+
+        @media #{$large-up} {
+            float: left;
+        }
     }
     &-description {
-        margin-left: 170px;
         position: relative;
         .button {
             min-width: auto;
@@ -43,6 +39,7 @@
             width: 100%;
         }
         @media #{$large-up} {
+            margin-left: 170px;
             &:after {
                 content: '';
                 position: absolute;
@@ -54,8 +51,20 @@
         }
     }
     &:last-child {
+        margin-bottom: 0;
         .recommend-description:after {
             content: none;
         }
+    }
+    &:not(:last-child) {
+        h3 {
+            border-right: 0;
+        }
+    }
+
+    @media #{$large-up} {
+        padding-bottom: 20px;
+        padding-top: 25px;
+        margin-bottom: 0px;
     }
 }

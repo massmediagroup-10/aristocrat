@@ -55,6 +55,7 @@ $foundation-palette: (
     warning: #ff5b5b,
     alert: #ec5840,
 );
+$regular-gray: #666666;
 $light-gray: #999999;
 $medium-gray: #cccccc;
 $dark-gray: #8a8a8a;
@@ -87,8 +88,7 @@ $breakpoints: (
     xxlarge: 1440px,
 );
 $breakpoint-classes: (small medium large);
-$breakpoint-max-large: (max-width: map-get($breakpoints, large));
-$breakpoint-max-medium: (max-width: map-get($breakpoints, medium));
+$max-large: (max-width: map-get($breakpoints, large));
 
 // 3. The Grid
 // -----------

@@ -13,7 +13,7 @@ html
                         a(href='#') Royal Boutique
                     li
                         span Aristocrat Kids
-        main.content
+        main.content.catalog
             .collection
                 .row.column
                     .collection-item.innerfull
@@ -26,13 +26,14 @@ html
                                 img(src='files/img/collection-1.jpg')
 
             include _includes/_catalog_head.pug
-            .row
-                aside.large-2.column
+            .row.column
+                aside.catalog-sidebar
                     include _includes/_filter.pug
-                section.catalog-body.large-9.large-offset-1.column
+                section.catalog-body
                     .row
-                        include _includes/_product4.pug
-                        include _includes/_product5.pug
+                        include _includes/_product3.pug
+                        include _includes/_product3.pug
+                        include _includes/_product3.pug
                         include _includes/_product3.pug
                         include _includes/_product3.pug
                         include _includes/_product3.pug

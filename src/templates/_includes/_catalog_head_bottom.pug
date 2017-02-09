@@ -3,32 +3,32 @@
         .catalog-head.bottom
             .row
                 .large-5.column
-                    select
-                        option Sort by newness
-                        option Sort by oldness
+                    .catalog-select
+                        select
+                            option Sort by newness
+                            option Sort by oldness
                 .large-4.column
-                    .pagination-centered
-                        ul.pagination.text-center(role="menubar",aria-label="Pagination")
-                            li
-                                span.arrow.unavailable(href="",aria-disabled="true")
-                                    i.fa.fa-angle-left
-                            li
-                                span.current 1
-                            li
-                                a(href="") 2
-                            li
-                                a(href="") 3
-                            li
-                                a(href="") 4
-                            li
-                                a(href="") 5
-                            li(aria-disabled="true")
-                                span.unavailable(href="") ...
-                            li
-                                a(href="") 9
-                            li
-                                a.arrow(href="")
-                                    i.fa.fa-angle-right
-                .large-3.column.text-right
+                    ul.pagination.text-center(role="menubar",aria-label="Pagination")
+                        li
+                            span.arrow.unavailable(href="",aria-disabled="true")
+                                i.fa.fa-angle-left
+                        li
+                            span.current 1
+                        li
+                            a(href="") 2
+                        li
+                            a(href="") 3
+                        li
+                            a(href="") 4
+                        li
+                            a(href="") 5
+                        li(aria-disabled="true")
+                            span.unavailable(href="") ...
+                        li
+                            a(href="") 9
+                        li
+                            a.arrow(href="")
+                                i.fa.fa-angle-right
+                .large-3.column
                     .catalog-head-results
                         | Showing 1–18 of 263 results

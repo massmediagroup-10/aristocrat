@@ -5,21 +5,24 @@
     top: 0;
     left: 0;
     right: 0;
+    position: fixed;
     z-index: 5;
-    position: relative;
 
-    @media #{$large-up} {
-        position: fixed;
+    @media #{$max-large} {
+        position: relative;
+        z-index: 4;
     }
     &.fixed {
         padding-top: 5px;
-        z-index: 5 !important;
+        @media #{$large-up} {
+            z-index: 5 !important;
+        }
         .header-main {
             margin-bottom: 5px;
         }
-        .header-logo {
-            height: 53px;
-            img {
+        .header-logo img{
+            @media #{$large-up} {
+                height: 53px;
             }
         }
     }
@@ -49,11 +52,15 @@
                 }
             }
         }
+        @media #{$max-large} {
+            display: none !important;
+        }
     }
     &-logo {
         justify-content: center;
-        transition: 300ms all ease-out;
-        height: 105px;
+        a {
+            display: block;
+        }
         img {
             transition: 300ms all ease-out;
             display: flex;
@@ -61,6 +68,11 @@
             padding-left: 3px;
             max-height: 100%;
             margin: 0 auto;
+            transition: 300ms all ease-out;
+            height: 105px;
+        }
+        @media #{$max-large} {
+            width: 100%;
         }
     }
     &-menu {
@@ -97,6 +109,9 @@
                 }
             }
         }
+        @media #{$max-large} {
+            display: none !important;
+        }
     }
     &-hint {
         position: fixed;
@@ -128,14 +143,18 @@
     background: $activeColor;
     border-bottom: 4px solid #fff;
     position: relative;
+    height: 38px;
     z-index: 1;
-    height: 41px;
 
+    @media #{$max-large} {
+        height: auto;
+    }
     &-panel {
-        line-height: 39px;
-        display: block;
-        @media #{$large-up} {
-            display: none;
+        line-height: 40px;
+        height: 40px;
+        display: none;
+        @media #{$max-large} {
+            display: block;
         }
         &-icons {
             i {
@@ -149,6 +168,9 @@
         }
     }
     &-collapse {
+        @media #{$max-large} {
+            display: none;
+        }
         h6 {
             padding: 0 1rem;
             a {
@@ -162,12 +184,10 @@
         a {
             color: $secondary-color;
         }
-        @media #{$breakpoint-max-large} {
-            position: absolute;
-            left: 0px;
-            right: 0px;
-            top: 100%;
+        @media #{$max-large} {
             padding: 1rem 0 1rem;
+            margin-left: -1rem;
+            margin-right: -1rem;
             background: $activeColor;
         }
     }
@@ -195,12 +215,10 @@
         left: 0;
         & > li {
             position: relative;
-            text-align: left;
-            @media #{$large-up} {
-                text-align: center;
-            }
-            @media #{$breakpoint-max-large} {
+            text-align: center;
+            @media #{$max-large} {
                 display: block;
+                text-align: left;
             }
             &.has-submenu {
                 &:after {
@@ -214,34 +232,37 @@
                 position: relative;
                 &.submenu-link {
                     &:before {
-                        content: "\f105";
-                        display: inline-block;
-                        font: normal normal normal 16px/1 FontAwesome;
-                        margin-right: 10px;
-                        transform-origin: center;
-                        transition: 300ms all ease;
-                    }
-                    &.collapsed {
-                        &:before {
-                            transform: rotate(90deg);
-                        }
+                        content: none;
                     }
                 }
-                @media #{$large-up} {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background: $primary-color;
+                    transition: 300ms all ease;
+                    height: 2px;
+                    left: 50%;
+                    right: 100%;
+                    bottom: 0;
+                }
+                @media #{$max-large} {
                     &.submenu-link {
                         &:before {
+                            content: "\f105";
+                            display: inline-block;
+                            font: normal normal normal 16px/1 FontAwesome;
+                            margin-right: 10px;
+                            transform-origin: center;
+                            transition: 300ms all ease;
+                        }
+                        &.collapsed {
+                            &:before {
+                                transform: rotate(90deg);
+                            }
+                        }
+                        &:after {
                             content: none;
                         }
-                    }
-                    &:after {
-                        content: '';
-                        position: absolute;
-                        background: $primary-color;
-                        transition: 300ms all ease;
-                        height: 2px;
-                        left: 50%;
-                        right: 100%;
-                        bottom: 0;
                     }
                 }
                 &.active {
@@ -302,13 +323,14 @@
                         }
                     }
                 }
-                @media #{$breakpoint-max-large} {
+                @media #{$max-large} {
                     position: static;
                     opacity: 1;
                     z-index: 0;
                     box-shadow: none;
                     background: #f2d0c2;
-                    padding-left: 30px;
+                    padding-left: rem-calc(30px);
+                    display: none;
                     li {
                         a {
                             color: $primary-color;

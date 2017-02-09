@@ -16,6 +16,9 @@
             .column:last-child {
                 padding-left: 5%;
             }
+            @media #{$max-large} {
+                display: none;
+            }
         }
         &-tr {
             border-bottom: 1px solid $button-background;
@@ -28,7 +31,9 @@
                 }
             }
             .column:last-child {
-                padding-left: 5%;
+                @media #{$large-up} {
+                    padding-left: 5%;
+                }
             }
         }
     }
@@ -50,6 +55,9 @@
                 font-style: normal;
                 font-family: $roboto;
             }
+            @media #{$max-large} {
+                text-align: right;
+            }
         }
         .button {
             margin: 20px 0px 10px 0px;
@@ -69,6 +77,7 @@
         .product-item {
             border-bottom: 1px solid $button-background;
             margin-bottom: 10px;
+            float: none;
             h5 {
                 font-family: $roboto;
                 margin-bottom: 0;

@@ -20,7 +20,7 @@
         .header-main {
             margin-bottom: 5px;
         }
-        .header-logo img{
+        .header-logo img {
             @media #{$large-up} {
                 height: 53px;
             }
@@ -319,7 +319,7 @@
                         font-size: 10px;
                         text-transform: uppercase;
                         &:hover {
-                            background: $activeColor;
+                            font-weight: bold;
                         }
                     }
                 }

@@ -3630,7 +3630,7 @@ function pageNavigation() {
             canHandling = true;
         });
     } else canHandling = true;
-    $('.navigation .submenu-item').click(function(e) {
+    $('.navigation .submenu a').click(function(e) {
         var hash = window.location.hash;
         if ($(hash).length > 0) {
             e.preventDefault();

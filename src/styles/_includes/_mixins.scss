@@ -14,15 +14,15 @@
     $n: 1;
     // $number must be a number
     @if type-of($number) != number {
-        @warn '#{ $number } is not a number.';
+        @warn '#{$number} is not a number.';
         @return $number;
     }
     // $digits must be a unitless number
     @if type-of($digits) != number {
-        @warn '#{ $digits } is not a number.';
+        @warn '#{$digits} is not a number.';
         @return $number;
     } @else if not unitless($digits) {
-        @warn '#{ $digits } has a unit.';
+        @warn '#{$digits} has a unit.';
         @return $number;
     }
     @for $i from 1 through $digits {
@@ -35,12 +35,12 @@
     } @else if $mode == floor {
         @return floor($number * $n) / $n;
     } @else {
-        @warn '#{ $mode } is undefined keyword.';
+        @warn '#{$mode} is undefined keyword.';
         @return $number;
     }
 }
 
-@function strip-unit($number) {
+@function strip-units($number) {
     @if type-of($number) == 'number' and not unitless($number) {
         @return $number / ($number * 0 + 1);
     }
@@ -48,7 +48,7 @@
     @return $number;
 }
 
-@function pxrem($sizePx, $size100:strip-unit($global-font-size)) {
+@function pxrem($sizePx, $size100:strip-units($global-font-size)) {
     @if not unitless($sizePx) {
         $sizePx: strip-units($sizePx);
     }
@@ -56,6 +56,17 @@
         $size100: strip-units($size100);
     }
     @return decimal-round(($sizePx / $size100) * 1rem, 2);
+}
+
+@mixin display-flex($justify: flex-left, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+%flex {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 %clear:after {
@@ -75,7 +86,8 @@
     width: 100%;
 }
 
-%table-row {
+%table-row
+.vertical-box {
     display: table-row;
     width: 100%;
 }

@@ -3726,6 +3726,20 @@ function filterToggle() {
     }
 }
 
+function preloader() {
+    if (preloaderDone) {
+        $('.preloader').fadeOut(function() {
+            $(this).hide();
+        });
+    } else {
+        setTimeout(function() {
+            $('.preloader').fadeOut(function() {
+                $(this).hide();
+            });
+        }, 1000);
+    }
+}
+
 var canHandling = false;
 
 $(document).ready(function() {
@@ -3768,6 +3782,7 @@ $(document).ready(function() {
     });
     $(window).on('load', function() {
         fixedResponsive();
+        preloader();
     });
 
     $(document).on("click", ".deleteLink", function() {

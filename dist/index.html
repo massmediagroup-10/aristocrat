@@ -10,8 +10,38 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/slick.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+      .preloader {
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          z-index: 100;
+          width: 100%;
+          height: 100%;
+          background: #fff;
+          text-align: center;
+      }
+      .preloader img {
+          position: absolute;
+          margin: auto;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+      }
+      
+    </style>
+    <script>
+      var preloaderDone = false;
+          setTimeout(function () {
+          preloaderDone = true;
+      }, 2000);
+    </script>
   </head>
   <body class="starterkit">
+    <div class="preloader"><img src="files/img/logo-big.png"></div>
     <div class="header-line"></div>
     <div class="header-hint">
       <div class="row">
@@ -24,71 +54,64 @@
       </div><a class="header-hint-close"><i class="fa fa-close"></i></a>
     </div>
     <header class="header">
-      <div class="header-main row expanded column">
-        <div class="header-search medium-4 column show-for-large">
-          <div class="search">
-            <div class="fa fa-search"></div>
-            <input class="search-input" placeholder="Search">
+      <div class="header-main row">
+        <div class="header-logo medium-3 column text-center"><a href="/"><img src="files/img/logo.png"></a></div>
+        <nav class="navigation medium-9 column">
+          <div class="row column">
+            <div class="navigation-panel"><a class="menu-toggle"><i class="fa fa-bars"></i><i class="fa fa-close"></i></a></div>
+            <div class="navigation-collapse">
+              <h6><a>My account</a></h6>
+              <ul class="menu">
+                <li><a class="submenu-link"><span>OUR KINGDOM</span></a>
+                  <ul class="submenu">
+                    <li><a><span>
+                          About Aristocrat
+                          Kids</span></a></li>
+                    <li><a><span>About Designer</span></a></li>
+                    <li><a><span>Brand Values</span></a></li>
+                    <li><a><span>Royal Tale</span></a></li>
+                  </ul>
+                </li>
+                <li><a class="submenu-link"><span>ROYAL ATELIER</span></a>
+                  <ul class="submenu">
+                    <li><a><span>
+                          About Aristocrat
+                          Kids</span></a></li>
+                    <li><a><span>About Designer</span></a></li>
+                    <li><a><span>Brand Values</span></a></li>
+                    <li><a><span>Royal Tale</span></a></li>
+                  </ul>
+                </li>
+                <li><a><span>COLLECTIONS</span></a></li>
+                <li><a><span>ROYAL BABY</span></a></li>
+                <li><a><span>SPECIAL SERVICES</span></a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="header-logo small-12 large-4 column text-center"><a href="/"><img src="files/img/logo.png"></a></div>
-        <div class="header-menu large-4 column medium-text-right show-for-large">
-          <ul>
-            <li><a><i class="fa fa-star"></i><span>Wishlist</span></a></li>
-            <li><a class="shopping-bag"><i class="fa fa-shopping-bag"></i><span>Bag</span><span class="counter">33</span></a></li>
-            <li><a><span>My account</span></a></li>
-          </ul>
-        </div>
+        </nav>
       </div>
-      <nav class="navigation">
-        <div class="row column">
-          <div class="navigation-panel"><a class="menu-toggle"><i class="fa fa-bars"></i><i class="fa fa-close"></i></a>
-            <div class="navigation-panel-icons float-right"><a><i class="fa fa-search"></i></a><a><i class="fa fa-star"></i></a><a><i class="fa fa-shopping-bag"></i></a></div>
-          </div>
-          <div class="navigation-collapse">
-            <h6><a>My account</a></h6>
-            <ul class="menu">
-              <li><a class="submenu-link"><span>OUR KINGDOM</span></a>
-                <ul class="submenu">
-                  <li><a><span>
-                        About Aristocrat
-                        Kids</span></a></li>
-                  <li><a><span>About Designer</span></a></li>
-                  <li><a><span>Brand Values</span></a></li>
-                  <li><a><span>Royal Tale</span></a></li>
-                </ul>
-              </li>
-              <li><a class="submenu-link"><span>ROYAL ATELIER</span></a>
-                <ul class="submenu">
-                  <li><a><span>
-                        About Aristocrat
-                        Kids</span></a></li>
-                  <li><a><span>About Designer</span></a></li>
-                  <li><a><span>Brand Values</span></a></li>
-                  <li><a><span>Royal Tale</span></a></li>
-                </ul>
-              </li>
-              <li><a><span>COLLECTIONS</span></a></li>
-              <li><a><span>ROYAL BABY</span></a></li>
-              <li><a><span>SPECIAL SERVICES</span></a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
     </header>
     <main class="content">
       <div class="preview">
         <ul class="preview-slider">
-          <li><img src="files/img/slider-1.jpg">
-            <div class="slider-description large-5">
-              <div class="vertical-box large-8">
-                <div class="vertical-middle">
-                  <h3>Spring / Summer <br /> 2017 Collection <br /> Royal Candy</h3><a class="button">DISCOVER</a>
-                </div>
-              </div>
+          <li><img src="files/img/slider-2.jpg">
+            <div class="slider-description">
+              <h3>Royal Candy</h3>
+              <h5>
+                Discover the adventures of princess Alexandra in the magical
+                gardens of little dwarf
+              </h5><a class="button">DISCOVER</a>
             </div>
           </li>
-          <li><img src="files/img/slider-2.jpg"></li>
+          <li><img src="files/img/slider-1.jpg">
+            <div class="slider-description">
+              <h3>Royal Candy</h3>
+              <h5>
+                Discover the adventures of princess Alexandra in the magical
+                gardens of little dwarf
+              </h5><a class="button">DISCOVER</a>
+            </div>
+          </li>
           <li><img src="files/img/slider-3.jpg"></li>
           <li><img src="files/img/slider-4.jpg"></li>
           <li><img src="files/img/slider-5.jpg"></li>
@@ -97,91 +120,90 @@
       <div class="content-inner">
         <div class="categories">
           <div class="row">
-            <div class="medium-6 column"><a class="categories-item preview-category">
-                <div class="categories-item-image"><img src="files/img/categories-1.jpg"></div>
+            <div class="medium-6 column">
+              <div class="categories-item preview-category"><a class="categories-item-image" href="#"><img src="files/img/categories-1.jpg"></a>
                 <div class="categories-item-description">
                   <h3>Aristocrat kids</h3>
-                  <h5>shop online</h5>
                   <p>
-                    Luxury clothing for girls <br />
-                    aged 9 months - 12 years
-                  </p>
-                </div></a></div>
-            <div class="medium-6 column"><a class="categories-item preview-category">
-                <div class="categories-item-image"><img src="files/img/categories-2.jpg"></div>
+                    Luxury clothing for girls <br>
+                    9 months - 12 years
+                  </p><a class="button" href="#">shop now</a>
+                </div>
+              </div>
+            </div>
+            <div class="medium-6 column">
+              <div class="categories-item preview-category"><a class="categories-item-image" href="#"><img src="files/img/categories-2.jpg"></a>
                 <div class="categories-item-description">
                   <h3>Royal baby</h3>
-                  <h5>shop online</h5>
                   <p>
-                    Exclusive line for newborn <br />
-                    baby boy and baby girl 0 - 2 years
-                  </p>
-                </div></a></div>
+                    Exclusive line for baby boy and girl <br>
+                    0 - 24 months
+                  </p><a class="button" href="#">shop now</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="trending">
-          <h3 class="subheader">Online shop</h3>
+          <h3 class="subheader">ROYAL BOTIQUE</h3>
           <div class="product-list row">
             <div class="product-item text-center large-3 column">
               <div class="product-item-image vertical-box"><a class="vertical-middle"><img src="files/img/product-1.jpg"></a></div>
               <div class="product-item-description">
-                <p><a>Clothing</a></p>
-                <h5><a>dresses</a></h5><a class="detail">SHOP NOW
-                  <div class="fa fa-angle-right"></div></a>
+                <h5><a>HER SWEETNESS DRESS</a></h5>
+                <h5>€262.00</h5>
               </div>
             </div>
             <div class="product-item text-center large-3 column">
               <div class="product-item-image vertical-box"><a class="vertical-middle"><img src="files/img/product-1.jpg"></a></div>
               <div class="product-item-description">
-                <p><a>Clothing</a></p>
-                <h5><a>dresses</a></h5><a class="detail">SHOP NOW
-                  <div class="fa fa-angle-right"></div></a>
+                <h5><a>HER SWEETNESS DRESS</a></h5>
+                <h5>€262.00</h5>
               </div>
             </div>
             <div class="product-item text-center large-3 column">
               <div class="product-item-image vertical-box"><a class="vertical-middle"><img src="files/img/product-1.jpg"></a></div>
               <div class="product-item-description">
-                <p><a>Clothing</a></p>
-                <h5><a>dresses</a></h5><a class="detail">SHOP NOW
-                  <div class="fa fa-angle-right"></div></a>
+                <h5><a>HER SWEETNESS DRESS</a></h5>
+                <h5>€262.00</h5>
               </div>
             </div>
             <div class="product-item text-center large-3 column">
               <div class="product-item-image vertical-box"><a class="vertical-middle"><img src="files/img/product-1.jpg"></a></div>
               <div class="product-item-description">
-                <p><a>Clothing</a></p>
-                <h5><a>dresses</a></h5><a class="detail">SHOP NOW
-                  <div class="fa fa-angle-right"></div></a>
+                <h5><a>HER SWEETNESS DRESS</a></h5>
+                <h5>€262.00</h5>
               </div>
             </div>
             <div class="product-item text-center large-3 column">
               <div class="product-item-image vertical-box"><a class="vertical-middle"><img src="files/img/product-1.jpg"></a></div>
               <div class="product-item-description">
-                <p><a>Clothing</a></p>
-                <h5><a>dresses</a></h5><a class="detail">SHOP NOW
-                  <div class="fa fa-angle-right"></div></a>
+                <h5><a>HER SWEETNESS DRESS</a></h5>
+                <h5>€262.00</h5>
               </div>
             </div>
             <div class="product-item text-center large-3 column">
               <div class="product-item-image vertical-box"><a class="vertical-middle"><img src="files/img/product-1.jpg"></a></div>
               <div class="product-item-description">
-                <p><a>Clothing</a></p>
-                <h5><a>dresses</a></h5><a class="detail">SHOP NOW
-                  <div class="fa fa-angle-right"></div></a>
+                <h5><a>HER SWEETNESS DRESS</a></h5>
+                <h5>€262.00</h5>
               </div>
             </div>
           </div>
         </div>
         <div class="collection">
-          <div class="row column">
-            <div class="collection-item full">
-              <div class="row">
-                <div class="collection-item-description large-4 column">
-                  <h2>Festive season</h2>
-                  <div class="collection-item-category"><i class="icon-star gold"></i>for little princess</div>
-                  <p>Dress your little girl in exquisite and child appropriate fashion which ranges from special occasion wear to easy separates.</p><a class="button">Discover</a>
+          <div class="collection-item full">
+            <div class="collection-item-image"><img src="files/img/collection-1.jpg"></div>
+            <div class="collection-item-description">
+              <div class="row-half">
+                <div class="collection-item-inner">
+                  <h3>SUMMER BREEZE</h3>
+                  <p>
+                    Longing for sun, sitting under summer
+                    light blue sky and sipping refreshing lemonade on the beach?
+                  </p>
+                  <p>Choose your resort wardrobe for winter holiday escape in sun!</p><a class="button darker">Discover</a>
                 </div>
-                <div class="collection-item-image large-8 column"><img src="files/img/collection-1.jpg"></div>
               </div>
             </div>
           </div>
@@ -192,7 +214,8 @@
               <div class="categories-item-image" style="background-image: url(files/img/categories-3.jpg)"></div>
               <div class="categories-item-description">
                 <div class="text-center">
-                  <h3>Aristocrat Kids Kingdom</h3><a class="button"> DISCOVER</a>
+                  <h3>Aristocrat Kids Kingdom</h3>
+                  <p>Open this door and let the magic take you on a journey through our Royal Kingdom</p><a class="button"> DISCOVER</a>
                 </div>
               </div>
             </div>
@@ -200,23 +223,25 @@
         </div>
         <div class="collection">
           <div class="row">
-            <div class="medium-6 column">
+            <div class="large-6 column">
               <div class="collection-item text-center">
                 <div class="collection-item-image"><img src="files/img/collection-2.jpg"></div>
                 <div class="collection-item-description">
                   <h3>Royal tailor</h3>
-                  <div class="collection-item-category"><i class="icon-star gold"></i>for fashion girl</div>
-                  <p>Dress your little girl in exquisite and child.</p><a class="button">Discover</a>
+                  <p>
+                    Using ancient royal techniques Aristocrat Kids Royal tailors creates
+                    exclusive and unique handmade garments with impeccable attention
+                     to every detail
+                  </p><a class="button darker">Discover</a>
                 </div>
               </div>
             </div>
-            <div class="medium-6 column">
+            <div class="large-6 column">
               <div class="collection-item text-center">
                 <div class="collection-item-image"><img src="files/img/collection-3.jpg"></div>
                 <div class="collection-item-description">
                   <h3>Special Service</h3>
-                  <div class="collection-item-category"><i class="icon-star gold"></i>for little girl</div>
-                  <p>Dress your little girl in exquisite and child.</p><a class="button">Discover</a>
+                  <p>See the surprises we have prepared for you!</p><a class="button darker">Discover</a>
                 </div>
               </div>
             </div>
@@ -228,7 +253,8 @@
               <div class="categories-item-image" style="background-image: url(files/img/categories-4.jpg)"></div>
               <div class="categories-item-description">
                 <div class="text-center">
-                  <h3>Royal Baby</h3><a class="button"> DISCOVER</a>
+                  <h3>Royal Baby</h3>
+                  <p>Learn about the essence of true luxury for baby boy and girl aged 0 - 24 months</p><a class="button"> DISCOVER</a>
                 </div>
               </div>
             </div>
@@ -237,13 +263,12 @@
         <div class="collection-slider">
           <ul>
             <li><img src="files/img/slider-2.jpg">
-              <div class="slider-description large-5">
-                <div class="vertical-box large-8">
-                  <div class="vertical-middle">
-                    <h3>Bespoke quality</h3>
-                    <p>ARISTOCRAT KIDS is a luxury children’s wear brand famous for its bespoke quality and unique signature of dreamy fairy tale style look. Using the finest textiles, Aristocrat Kids creates exclusive and unique handmade pieces with impeccable attention to every detail.</p><a class="button">DISCOVER</a>
-                  </div>
-                </div>
+              <div class="slider-description">
+                <h3>Bespoke quality</h3>
+                <p>
+                  The beauty of our Royal Tailors and artisan <br>
+                  craftsmanship
+                </p><a class="button">DISCOVER</a>
               </div>
             </li>
           </ul>

@@ -1,7 +1,7 @@
 .categories {
     &-item {
         position: relative;
-        margin-bottom: 54px;
+        margin-bottom: rem-calc(54px);
         display: block;
         &:not(.preview-category) {
             //@extend %shadow;
@@ -31,13 +31,18 @@
             background-size: cover;
             background-position: center;
             margin-bottom: rem-calc(31px);
+            display: block;
             img {
                 width: 100%;
             }
         }
         &-description {
+            text-align: center;
             h3 {
                 color: $primary-color;
+            }
+            p {
+                margin-bottom: 16px;
             }
             &.vertical-box {
                 z-index: 1;
@@ -82,7 +87,7 @@
                     background: rgba(0, 0, 0, 0.3);
                 }
                 &-image {
-                    height: 340px;
+                    height: 485px;
                 }
                 &-description {
                     right: 9.6%;

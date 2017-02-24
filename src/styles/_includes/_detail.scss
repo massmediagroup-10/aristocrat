@@ -135,6 +135,9 @@
             .switcher-text {
                 min-width: 164px;
             }
+            &.last {
+                margin-right: 0;
+            }
         }
     }
 

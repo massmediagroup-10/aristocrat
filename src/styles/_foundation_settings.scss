@@ -101,6 +101,7 @@ $grid-column-gutter: (
 );
 $grid-column-align-edge: true;
 $block-grid-max: 8;
+$gutter-medium: map-get($grid-column-gutter, medium);
 
 // 4. Base Typography
 // ------------------
@@ -239,8 +240,8 @@ $breadcrumbs-item-slash: true;
 $button-padding: 0.67rem 0.5rem;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: #c9c9c9;
-$button-background-hover: #b0afaf;
+$button-background: #e3e3e3;
+$button-background-hover: #d8d8d8;
 $button-color: #666666;
 $button-color-alt: $black;
 $button-radius: $global-radius;

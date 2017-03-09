@@ -1,5 +1,6 @@
 .footer {
-    background: $activeColor;
+    background: #fff;
+    border: 1px solid $button-background-hover;
     padding-top: rem-calc(49);
     padding-bottom: rem-calc(15);
     color: $dark-gray;

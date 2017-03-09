@@ -21,6 +21,20 @@
                     transform: scale(1.02) translateY(2%);
                 }
             }
+            .image-minor {
+                display: none;
+            }
+            .image-major {
+                display: block;
+            }
+            &:hover {
+                .image-minor {
+                    display: block;
+                }
+                .image-major {
+                    display: none;
+                }
+            }
         }
         &-description {
             h5 {
@@ -106,10 +120,9 @@
     margin-top: 25px;
 }
 .model-data h4 span {
-    text-align: right;
-    float: right;
     font-size: 10px;
     line-height: 40px;
+    display: block;
 }
 .size-guide-href {
     text-decoration: underline;

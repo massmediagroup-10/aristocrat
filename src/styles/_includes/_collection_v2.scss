@@ -1,8 +1,17 @@
-.collection {
+.collection-v2 {
+    margin-bottom: rem-calc(54);
     &-item {
         background: $colectionColor;
         margin-bottom: 28px;
         padding: rem-calc(34) rem-calc(30) rem-calc(14) rem-calc(30);
+        @extend %clear;
+        &-inner {
+            margin: 0 auto;
+            @media #{$large-up} {
+                max-width: 410px;
+                padding-left: $gutter-medium;
+            }
+        }
         &-category {
             text-transform: uppercase;
             margin-bottom: 28px;
@@ -12,16 +21,19 @@
             }
         }
         &-description {
-            min-height: 154px;
-            h2 {
+            padding: 0 40px;
+            min-height: 197px;
+            h3 {
+                color: $primary-color;
                 padding-top: 23px;
                 letter-spacing: 0.7px;
-                margin-bottom: 3px;
+                margin-bottom: 21px;
             }
             p {
-                font-size: $size-h5;
                 margin-bottom: 21px;
                 color: #666666;
+                line-height: 1.7;
+                font-size: 14px;
             }
             .button {
 
@@ -34,24 +46,36 @@
             }
         }
         &.full {
-            padding: pxrem(26) pxrem(23) pxrem(25) pxrem(23);
-            .collection-item-image {
+            padding:0 0;
+            border: 0;
+            @extend %flex;
+            .collection-v2-item-image {
                 margin-bottom: 0;
+                text-align: center;
+                @media #{$large-up} {
+                    width: 50%;
+                    order: 2;
+                    @include display-flex(flex-end, center);
+                }
+            }
+            .collection-v2-item-description {
+                @include display-flex(flex-end, center);
+                @media #{$large-up} {
+                    width: 50%;
+                    order: 1;
+                }
             }
             @media #{$large-up} {
-                padding: pxrem(56) pxrem(53) pxrem(55) pxrem(53);
-                & > .row {
-                    display: flex;
-                    align-items: center;
-                }
+                padding: 0 0;
             }
         }
         &.innerfull {
             padding: 15px 15px 20px 15px;
+            border: 0;
             @media #{$large-up} {
                 padding: 0 0 0 0;
             }
-            .collection-item-image {
+            .collection-v2-item-image {
                 margin-bottom: 0;
                 text-align: center
             }
@@ -66,7 +90,6 @@
                 margin-bottom: 17px;
             }
             p {
-                font-size: 12px;
                 line-height: 19px;
             }
         }

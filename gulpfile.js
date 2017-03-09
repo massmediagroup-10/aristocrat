@@ -99,7 +99,7 @@ gulp.task('styles', function() {
                 message:"<%= error.message %>"
             })
         }))
-        //.pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(sass({
             precision: 2,
             includePaths: [
@@ -110,7 +110,7 @@ gulp.task('styles', function() {
             outputStyle: 'compressed'
         }))
         .pipe(autoprefixer('last 3 versions'))
-        //.pipe(sourcemaps.write())
+        .pipe(sourcemaps.write())
         .pipe(cssimport({}))
         .pipe(rename('style.css'))
         .pipe(gulp.dest(routes.styles.css))
@@ -149,6 +149,7 @@ gulp.task('scripts', function() {
             'node_modules/foundation-sites/js/foundation.util.motion.js',
             'node_modules/foundation-datepicker/js/foundation-datepicker.js',
             'node_modules/jquery-validation/dist/jquery.validate.min.js',
+            'node_modules/jquery-zoom/jquery.zoom.js',
             routes.scripts.js
         ])
         .pipe(plumber({

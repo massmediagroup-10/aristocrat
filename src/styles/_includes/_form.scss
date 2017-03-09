@@ -112,10 +112,17 @@
             box-shadow: 0 0 0px 2px #ff6f74;
         }
     }
+    [type="checkbox"] {
+        &.error {
+            & + label {
+                color: #ff6f74;
+            }
+        }
+    }
     label {
         font-size: 1rem;
         &.error {
-            display: none !important;
+            color: #ff6f74;
         }
     }
     .button {
@@ -141,6 +148,14 @@
         .column:last-child {
             padding-left: 5px;
             padding-right: 5px;
+        }
+    }
+    .imitate-label-padding {
+        padding-top: 24px;
+    }
+    .message {
+        &.error {
+            color: #ff6f74;
         }
     }
 }

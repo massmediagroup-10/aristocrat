@@ -80,6 +80,12 @@
                 }
             }
         }
+        &.categories-cut {
+            .categories-item-image {
+                background-size: 90%;
+                background-color: #f3f3f3;
+            }
+        }
         &.full {
             //inner elements is full-item
             .categories-item {

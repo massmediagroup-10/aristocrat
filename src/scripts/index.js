@@ -80,6 +80,14 @@ function initCarousel() {
     $('.detail-slider-nav').slick(detailNav);
 }
 
+function zoomInit() {
+    $('.detail-slider-main .zoom-link').each(function() {
+        $(this).zoom({
+            url: $(this).data('image')
+        });
+    });
+}
+
 function initSlider() {
     $('.preview-slider').slick({
         dots: false,
@@ -527,6 +535,7 @@ $(document).ready(function() {
     simpleMenu();
     mobileMenu();
     filterToggle();
+    zoomInit();
 
     $('form').each(function() {
         $(this).validate();

@@ -25,8 +25,8 @@
     "critical": "^0.8.0",
     "flexboxgrid": "^6.3.1",
     "font-awesome": "*",
-    "foundation-sites": "*",
     "foundation-datepicker": "^ 1.5.6",
+    "foundation-sites": "*",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.1",
@@ -45,10 +45,11 @@
     "gulp-sourcemaps": "^2.1.1",
     "gulp-uglify": "^2.0.0",
     "gulp-uncss": "^1.0.6",
-    "merge-stream": "^1.0.0",
-    "slick-carousel": "^1.6.0",
     "jquery-validation": "^1.16.0",
-    "motion-ui": "^1.2.2"
+    "jquery-zoom": "^1.7.18",
+    "merge-stream": "^1.0.0",
+    "motion-ui": "^1.2.2",
+    "slick-carousel": "^1.6.0"
   },
   "devDependencies": {
     "mocha": "*",

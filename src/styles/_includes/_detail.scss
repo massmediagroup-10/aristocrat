@@ -1,9 +1,12 @@
 .detail {
     &-top {
-        margin-bottom: 60px;
+        margin-bottom: rem-calc(40px);
+        @media #{$large-up} {
+            margin-bottom: 0;
+        }
     }
     &-recommend {
-        margin-bottom: 47px;
+        margin-bottom: rem-calc(47px);
     }
     &-main {
         h4 {
@@ -60,6 +63,7 @@
     &-color {
         h6 {
             margin-bottom: 8px;
+            text-transform: uppercase;
         }
         &-row {
             @extend %clear;
@@ -86,7 +90,7 @@
                 content: "\f00c";
                 display: inline-block;
                 font: normal normal normal 13px/1 FontAwesome;
-                color: #bf9e8f;
+                color: $pickout;
                 position: absolute;
                 top: 8px;
                 left: 2px;
@@ -94,10 +98,10 @@
                 transition: 350ms all ease;
             }
             &:hover {
-                border-color: #bf9e8f;
+                border-color: $pickout;
             }
             &.active {
-                border-color: #bf9e8f;
+                border-color: $pickout;
                 &:before {
                     top: 2px;
                     opacity: 1;
@@ -112,7 +116,10 @@
             margin-right: 25px;
         }
         a {
+            display: inline-block;
+            margin-bottom: 15px;
             text-decoration: underline;
+            text-transform: uppercase;
             &:hover {
                 text-decoration: none;
             }
@@ -143,6 +150,7 @@
 
     &-description {
         line-height: 21px;
+        margin-bottom: rem-calc(47px);
         p {
             line-height: 21px;
             margin-bottom: 22px;
@@ -161,7 +169,7 @@
         color: $secondary-color;
         font-size: 18px;
         font-weight: 300;
-        margin-bottom: 36px;
+        margin-bottom: rem-calc(47px);
         p {
             display: inline-block;
             vertical-align: middle;
@@ -179,7 +187,10 @@
     }
 
     &-slider {
-        margin-bottom: 30px;
+        margin-bottom: rem-calc(30px);
+        @media #{$large-up} {
+            margin-bottom: 0px;
+        }
         .product-label {
             float: left;
 
